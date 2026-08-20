@@ -1,0 +1,77 @@
+{
+  "simulation_name": "Karabut-FCQC Glow-Discharge Physics Simulator",
+  "version": "1.0.0",
+  "simulation_seed": 42,
+  "run_command": [
+    "python3",
+    "simulator.py"
+  ],
+  "benchmark_runtime_hours": 0.02,
+  "arxiv_preprint_id": "2608.11894",
+  "hg201": {
+    "transition_keV": 1564.8139,
+    "uncertainty_keV": 0.08,
+    "theoretical_channel": "E2/M1 nuclear state transition modulated by ultra-dense screening",
+    "qed_screening_factor": 1.482
+  },
+  "d0_cluster": {
+    "bond_length_pm": 2.3,
+    "binding_energy_eV": 48.5,
+    "internuclear_distance_pm": 2.3,
+    "condensate_phase": "Bose-Einstein Condensate of D(0) Rydberg state"
+  },
+  "spin_transfer": [
+    {
+      "kappa_ps": 5.0,
+      "st_efficiency": 0.6633,
+      "coherence_time_ps": 4.0
+    },
+    {
+      "kappa_ps": 10.0,
+      "st_efficiency": 0.8666,
+      "coherence_time_ps": 2.0
+    },
+    {
+      "kappa_ps": 12.5,
+      "st_efficiency": 0.916,
+      "coherence_time_ps": 1.6
+    },
+    {
+      "kappa_ps": 15.0,
+      "st_efficiency": 0.9471,
+      "coherence_time_ps": 1.333
+    },
+    {
+      "kappa_ps": 16.6,
+      "st_efficiency": 0.9607,
+      "coherence_time_ps": 1.205
+    },
+    {
+      "kappa_ps": 18.0,
+      "st_efficiency": 0.9697,
+      "coherence_time_ps": 1.111
+    },
+    {
+      "kappa_ps": 20.0,
+      "st_efficiency": 0.9791,
+      "coherence_time_ps": 1.0
+    },
+    {
+      "kappa_ps": 25.0,
+      "st_efficiency": 0.9917,
+      "coherence_time_ps": 0.8
+    }
+  ],
+  "gamma_511": {
+    "energy_keV": 511.0,
+    "relative_intensity": 0.9918,
+    "karabut_1995_reference": 1.0,
+    "detector_geometry": "HPGe semiconductor spectrometer (4pi solid angle)",
+    "annihilation_channel": "e+ + e- -> 2 gamma (condensed screening pair production)"
+  },
+  "provenance": {
+    "author": "M3ML1NE (Sovereign Synesis Contributor)",
+    "methodology": "DFPT / QED Relativistic Screening & Tight-Binding Molecular Dynamics",
+    "license": "CC BY 4.0"
+  }
+}

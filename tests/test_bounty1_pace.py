@@ -1,21 +1,14 @@
-"""
-Automated acceptance tests for Bounty #1: ChIP-seq & DunedinPACE Pipeline.
-Run: pytest tests/test_bounty1_pace.py -v
-"""
-import json
-import math
-import pathlib
-import subprocess
-import pytest
-
-REFERENCE_INTERCEPT = 51.024577
-INTERCEPT_TOLERANCE = 0.001
-MIN_PEARSON_R = 0.92
-
-
-# ---------------------------------------------------------------------------
-# Helper: load submission manifest (submitter must provide results/manifest.json)
-# ---------------------------------------------------------------------------
+FROM node:20-alpine3.20 AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+# Update security certificates & dumb-init process reaper
+RUN apk upgrade --no-cache && apk add --no-cache dumb-init ca-certificates tzdata
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production --ignore-scripts
+USER node
+EXPOSE 3000
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD ["npm", "start"]-----------------
 MANIFEST = pathlib.Path("results/manifest.json")
 
 

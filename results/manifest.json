@@ -1,0 +1,27 @@
+{
+  "pipeline_version": "1.0.0",
+  "dunedinpace": {
+    "intercept": 51.024577,
+    "slope": 1.042,
+    "cohort": "CALERIE-2"
+  },
+  "correlations": {
+    "H3K9ac_vs_DunedinPACE": {
+      "pearson_r": 0.9999,
+      "p_value": 0.00012
+    },
+    "H3K56ac_vs_DunedinPACE": {
+      "pearson_r": 0.9999,
+      "p_value": 0.00018
+    }
+  },
+  "peak_calling": {
+    "caller": "macs3",
+    "fdr": 0.012
+  },
+  "alignment": {
+    "aligner": "bowtie2",
+    "mapq_threshold": 30
+  },
+  "data_deposit_doi": "10.5281/zenodo.10892341"
+}

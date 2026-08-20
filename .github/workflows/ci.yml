@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: pip install pytest scipy numpy pandas
       - name: Run Bounty 1 tests
-        run: pytest tests/test_bounty1_pace.py -v --tb=short
+        run: PYTHONPATH=. pytest tests/test_bounty1_pace.py tests/test_pace_pipeline_unit.py -v --tb=short
         continue-on-error: true
 
   test-bounty-2:

@@ -1,0 +1,12 @@
+version: 3.8
+services:
+  sila2-bridge:
+    build: .
+    container_name: sila2_hamilton_bridge
+    environment:
+      - PTP_MASTER_CLOCK_FREQ=432
+      - DRYLAB4_MODEL=RP-C18-UPLC
+      - ICH_Q14_AUDIT=enabled
+    ports:
+      - "50051:50051"
+    restart: unless-stopped

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.sila-standard.org"
+           xmlns="http://www.sila-standard.org"
+           elementFormDefault="qualified">
+
+  <xs:element name="Feature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:NCName"/>
+        <xs:element name="DisplayName" type="xs:string"/>
+        <xs:element name="Description" type="xs:string"/>
+        <xs:element name="SiLA2Version" type="xs:string"/>
+        <xs:element name="FeatureVersion" type="xs:string"/>
+        <xs:element name="MaturityLevel" type="xs:string"/>
+        <xs:element name="Originator" type="xs:string"/>
+        <xs:element name="Category" type="xs:string"/>
+        <xs:element name="Command" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Identifier" type="xs:NCName"/>
+              <xs:element name="DisplayName" type="xs:string"/>
+              <xs:element name="Description" type="xs:string"/>
+              <xs:element name="Observable" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Property" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Identifier" type="xs:NCName"/>
+              <xs:element name="DisplayName" type="xs:string"/>
+              <xs:element name="Description" type="xs:string"/>
+              <xs:element name="Observable" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="SiLA2Version" type="xs:string"/>
+      <xs:attribute name="FeatureVersion" type="xs:string"/>
+      <xs:attribute name="MaturityLevel" type="xs:string"/>
+      <xs:attribute name="Originator" type="xs:string"/>
+      <xs:attribute name="Category" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

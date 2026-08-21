@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package sila2_bridge.hamilton_starlet;
+
+service HamiltonMicrolabSTARlet {
+  rpc GetFeatureInfo (GetFeatureInfoRequest) returns (GetFeatureInfoResponse);
+  rpc GetParameters (GetParametersRequest) returns (GetParametersResponse);
+  rpc SetParameters (SetParametersRequest) returns (SetParametersResponse);
+  rpc ExecuteMethod (ExecuteMethodRequest) returns (ExecuteMethodResponse);
+  rpc GetStatus (GetStatusRequest) returns (GetStatusResponse);
+  rpc GetAuditTrail (GetAuditTrailRequest) returns (stream AuditTrailEntry);
+}
+
+message GetFeatureInfoRequest {}
+message GetFeatureInfoResponse {
+  string feature_id = 1;
+  string feature_version = 2;
+  string vendor = 3;
+  string model = 4;
+  string serial_number = 5;
+}
+
+message GetParametersRequest {
+  string parameter_set_id = 1;
+}
+
+message GetParametersResponse {
+  map<string, string> parameters = 1;
+}
+
+message SetParametersRequest {
+  string parameter_set_id = 1;
+  map<string, string> parameters = 2;
+}
+
+message SetParametersResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ExecuteMethodRequest {
+  string method_id = 1;
+  string method_definition = 2;
+  map<string, string> parameters = 3;
+}
+
+message ExecuteMethodResponse {
+  string run_id = 1;
+  string status = 2;
+  string estimated_completion_utc = 3;
+}
+
+message GetStatusRequest {
+  string run_id = 1;
+}
+
+message GetStatusResponse {
+  string run_id = 1;
+  string status = 2;
+  int32 progress_percent = 3;
+  string current_step = 4;
+  string error_message = 5;
+}
+
+message GetAuditTrailRequest {
+  string run_id = 1;
+  int32 page_size = 2;
+  string continuation_token = 3;
+}
+
+message AuditTrailEntry {
+  string operation_id = 1;
+  string actor = 2;
+  string timestamp = 3;
+  string delta = 4;
+  string run_id = 5;
+  map<string, string> metadata = 6;
+}

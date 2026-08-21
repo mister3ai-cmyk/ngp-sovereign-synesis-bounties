@@ -1,0 +1,2 @@
+[console_scripts]
+xmllint = xmllint:main

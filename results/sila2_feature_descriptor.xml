@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SiLAFeatureDescriptor xmlns="http://sila-standard.org/sila/v1.0.0/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://sila-standard.org/sila/v1.0.0/core schemas/sila2_core_v1.0.0.xsd">
+  <FeatureId>si.feature.hamilton.starlet</FeatureId>
+  <FeatureVersion>1.0.0</FeatureVersion>
+  <DisplayName>Hamilton Microlab STARlet Liquid Handler</DisplayName>
+  <Description>SiLA 2 Feature exposing the Hamilton Microlab STARlet as a standardized gRPC service for automated liquid handling in chromatography workflows.</Description>
+  <Vendor>Hamilton</Vendor>
+  <Model>Microlab STARlet</Model>
+  <SerialNumber>MOCK-0001</SerialNumber>
+  <gRPCMethods>
+    <Method>
+      <MethodName>GetFeatureInfo</MethodName>
+      <Description>Returns feature metadata</Description>
+      <RequestMessage>GetFeatureInfoRequest</RequestMessage>
+      <ResponseMessage>GetFeatureInfoResponse</ResponseMessage>
+    </Method>
+    <Method>
+      <MethodName>GetParameters</MethodName>
+      <Description>Retrieves parameter set values</Description>
+      <RequestMessage>GetParametersRequest</RequestMessage>
+      <ResponseMessage>GetParametersResponse</ResponseMessage>
+    </Method>
+    <Method>
+      <MethodName>SetParameters</MethodName>
+      <Description>Updates parameter set values</Description>
+      <RequestMessage>SetParametersRequest</RequestMessage>
+      <ResponseMessage>SetParametersResponse</ResponseMessage>
+    </Method>
+    <Method>
+      <MethodName>ExecuteMethod</MethodName>
+      <Description>Queues a method for execution</Description>
+      <RequestMessage>ExecuteMethodRequest</RequestMessage>
+      <ResponseMessage>ExecuteMethodResponse</ResponseMessage>
+    </Method>
+    <Method>
+      <MethodName>GetStatus</MethodName>
+      <Description>Reports run status</Description>
+      <RequestMessage>GetStatusRequest</RequestMessage>
+      <ResponseMessage>GetStatusResponse</ResponseMessage>
+    </Method>
+    <Method>
+      <MethodName>GetAuditTrail</MethodName>
+      <Description>Streams immutable ICH Q14 audit trail entries</Description>
+      <RequestMessage>GetAuditTrailRequest</RequestMessage>
+      <ResponseMessage>AuditTrailEntry</ResponseMessage>
+    </Method>
+  </gRPCMethods>
+  <Metadata>
+    <Property><Key>sila_version</Key><Value>1.0.0</Value></Property>
+    <Property><Key>clock_sync</Key><Value>IEEE 1588 PTP @ 432 Hz</Value></Property>
+    <Property><Key>compliance</Key><Value>ICH Q14</Value></Property>
+  </Metadata>
+</SiLAFeatureDescriptor>

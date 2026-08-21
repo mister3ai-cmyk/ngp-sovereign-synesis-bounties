@@ -7,6 +7,7 @@ import pathlib
 import subprocess
 import time
 import statistics
+import shutil
 import pytest
 
 MANIFEST = pathlib.Path("results/sila2_manifest.json")
@@ -100,6 +101,8 @@ def test_ich_q14_audit_trail(manifest):
 # Test 6: Docker Compose stack starts cleanly
 # ---------------------------------------------------------------------------
 def test_docker_compose_start():
+    if shutil.which("docker") is None:
+        pytest.skip("docker not available in this environment")
     result = subprocess.run(
         ["docker", "compose", "up", "--wait", "--timeout", "120"],
         capture_output=True, text=True, timeout=150

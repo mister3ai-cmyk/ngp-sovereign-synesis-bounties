@@ -39,8 +39,8 @@
   "simulation_seed": 42,
   "simulation_rng_state": "[723970371, 1229153189, 4170412009, 2042542564, 3342822751]",
   "run_command": [
-    "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
-    "D:\\Projects\\SZ-Worker\\sz-worker-zero-integration\\.scout_workspaces\\006b934cb975bb3a\\repository\\simulate_bounty2.py"
+    "python",
+    "simulate_bounty2.py"
   ],
   "arxiv_preprint_id": "2501.00001",
   "reference": "Karabut et al. (1995), Il Nuovo Cimento 107A, 879\u2013880"

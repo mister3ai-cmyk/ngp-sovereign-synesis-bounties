@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fcqc-simulator"
+version = "1.0.0"
+description = "Karabut Glow-Discharge Nuclear Screening and FCQC Physical Simulator"
+readme = "README.md"
+authors = [{ name = "Syn Research Lab & Sovereign Synesis" }]
+license = { text = "CC-BY-4.0" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+fcqc-sim = "fcqc_simulator.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+markers = [
+    "slow: mark test as slow",
+    "integration: mark test as integration",
+]

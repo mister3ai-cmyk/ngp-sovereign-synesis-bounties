@@ -1,0 +1,17 @@
+services:
+  sila2-starlet-bridge:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sila2-starlet-bridge
+    ports:
+      - "50052:50052"
+    volumes:
+      - ./results:/app/results
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import grpc, sila2_hamilton_starlet_pb2 as pb2, sila2_hamilton_starlet_pb2_grpc as pb2_grpc; channel = grpc.insecure_channel('localhost:50052'); stub = pb2_grpc.HamiltonSTARletFeatureStub(channel); res = stub.GetStatus(pb2.GetStatusRequest(actor='HEALTHCHECK'), timeout=2); assert res.state == 'IDLE'\" || exit 1"]
+      interval: 2s
+      timeout: 3s
+      retries: 5
+      start_period: 3s
+    restart: unless-stopped

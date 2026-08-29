@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature SiLA2Version="1.0"
+         FeatureVersion="1.0"
+         MaturityLevel="Verified"
+         Originator="org.silastandard"
+         Category="instruments"
+         xmlns="http://www.sila-standard.org"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.sila-standard.org ../../schemas/sila2_core_v1.0.0.xsd">
+    <Identifier>HamiltonSTARletBridge</Identifier>
+    <DisplayName>Hamilton Microlab STARlet and DryLab4 Robotic Laboratory Bridge</DisplayName>
+    <Description>SiLA 2 compliant interface for Hamilton Microlab STARlet liquid handling automation, DryLab4 chromatography retention-time prediction bridge, Waters Empower / Agilent OpenLab CDS acquisition, and 432 Hz master clock synchronization.</Description>
+
+    <!-- Command: InitializeDeck -->
+    <Command>
+        <Identifier>InitializeDeck</Identifier>
+        <DisplayName>Initialize STARlet Deck</DisplayName>
+        <Description>Initializes the Hamilton Microlab STARlet deck carriers, tip racks, and waste positions according to the designated liquid class and layout.</Description>
+        <Observable>No</Observable>
+        <Parameter>
+            <Identifier>DeckLayout</Identifier>
+            <DisplayName>Deck Layout File</DisplayName>
+            <Description>Path or configuration identifier for the STARlet deck layout.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Parameter>
+        <Response>
+            <Identifier>Status</Identifier>
+            <DisplayName>Initialization Status</DisplayName>
+            <Description>Status message confirming deck initialization and home sensor calibration.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Response>
+    </Command>
+
+    <!-- Command: PrepareDryLabSequence -->
+    <Command>
+        <Identifier>PrepareDryLabSequence</Identifier>
+        <DisplayName>Prepare DryLab4 Gradient Sequence</DisplayName>
+        <Description>Automates the preparation of chromatography sample vials, multi-solvent gradient blends, and internal standard spiking driven by DryLab4 optimization parameters.</Description>
+        <Observable>No</Observable>
+        <Parameter>
+            <Identifier>SequenceConfigurationJSON</Identifier>
+            <DisplayName>Sequence Configuration JSON</DisplayName>
+            <Description>JSON payload specifying compound parameters, target concentrations, gradient steps, and vial allocations.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Parameter>
+        <Response>
+            <Identifier>PreparedVialsCount</Identifier>
+            <DisplayName>Prepared Vials Count</DisplayName>
+            <Description>Total number of HPLC sample vials prepared and loaded into autosampler rack.</Description>
+            <DataType>
+                <Basic>Integer</Basic>
+            </DataType>
+        </Response>
+    </Command>
+
+    <!-- Command: TriggerHPLCRun -->
+    <Command>
+        <Identifier>TriggerHPLCRun</Identifier>
+        <DisplayName>Trigger HPLC Run</DisplayName>
+        <Description>Dispatches injection commands to HPLC autosampler and initiates Empower or OpenLab CDS acquisition sequence.</Description>
+        <Observable>No</Observable>
+        <Parameter>
+            <Identifier>VialPosition</Identifier>
+            <DisplayName>Vial Position</DisplayName>
+            <Description>Autosampler tray and vial position (e.g. 1:A1).</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Parameter>
+        <Parameter>
+            <Identifier>InjectionVolumeUL</Identifier>
+            <DisplayName>Injection Volume (uL)</DisplayName>
+            <Description>Volume in microliters to be injected onto the analytical column.</Description>
+            <DataType>
+                <Basic>Real</Basic>
+            </DataType>
+        </Parameter>
+        <Response>
+            <Identifier>RunID</Identifier>
+            <DisplayName>HPLC Run Identifier</DisplayName>
+            <Description>Unique tracking identifier assigned to the chromatographic acquisition run.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Response>
+    </Command>
+
+    <!-- Command: AcquireCDSData -->
+    <Command>
+        <Identifier>AcquireCDSData</Identifier>
+        <DisplayName>Acquire CDS Chromatographic Data</DisplayName>
+        <Description>Retrieves processed peak tables, retention times, and spectra from Waters Empower or Agilent OpenLab CDS.</Description>
+        <Observable>No</Observable>
+        <Parameter>
+            <Identifier>RunID</Identifier>
+            <DisplayName>HPLC Run Identifier</DisplayName>
+            <Description>Unique tracking identifier for the chromatographic acquisition.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Parameter>
+        <Response>
+            <Identifier>CDSResultsJSON</Identifier>
+            <DisplayName>CDS Results JSON</DisplayName>
+            <Description>Extracted peak table, retention times, peak areas, and resolution metrics.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Response>
+    </Command>
+
+    <!-- Command: PredictRetentionTimes -->
+    <Command>
+        <Identifier>PredictRetentionTimes</Identifier>
+        <DisplayName>Predict DryLab4 Retention Times</DisplayName>
+        <Description>Calculates solvatochromic linear solvent strength (LSS) retention times for analyte mixtures across multi-dimensional parameter spaces.</Description>
+        <Observable>No</Observable>
+        <Parameter>
+            <Identifier>MethodParametersJSON</Identifier>
+            <DisplayName>Method Parameters JSON</DisplayName>
+            <Description>Solvent gradient, column dimensions, temperature, and compound parameters.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Parameter>
+        <Response>
+            <Identifier>PredictionResultsJSON</Identifier>
+            <DisplayName>Prediction Results JSON</DisplayName>
+            <Description>Calculated retention times, peak widths, and critical resolution values.</Description>
+            <DataType>
+                <Basic>String</Basic>
+            </DataType>
+        </Response>
+    </Command>
+
+    <!-- Property: InstrumentStatus -->
+    <Property>
+        <Identifier>InstrumentStatus</Identifier>
+        <DisplayName>Instrument Status</DisplayName>
+        <Description>Current operational state of the STARlet liquid handler and connected analytical instruments.</Description>
+        <Observable>No</Observable>
+        <DataType>
+            <Basic>String</Basic>
+        </DataType>
+    </Property>
+
+    <!-- Property: MasterClockSynchronization -->
+    <Property>
+        <Identifier>MasterClockSynchronization</Identifier>
+        <DisplayName>Master Clock Synchronization State</DisplayName>
+        <Description>Operational telemetry of the 432 Hz UTC-disciplined master clock and IEEE 1588 PTP sync status.</Description>
+        <Observable>No</Observable>
+        <DataType>
+            <Basic>String</Basic>
+        </DataType>
+    </Property>
+
+</Feature>

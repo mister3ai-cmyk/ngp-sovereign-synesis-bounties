@@ -1,0 +1,51 @@
+{
+  "bounty": 1,
+  "title": "ChIP-seq & Methylation PACE Pipeline",
+  "seed": 20260831,
+  "generated_utc": 1788164937,
+  "dunedinpace": {
+    "intercept": 51.024577,
+    "slope": 38.64734674230397,
+    "r_fit": 0.996220703108897,
+    "rmse": 0.6953328573339667,
+    "r2": 0.9924556893027857,
+    "reference": 51.024577,
+    "n_cpg": 120,
+    "cohort_n": 96
+  },
+  "correlations": {
+    "H3K9ac_vs_DunedinPACE": {
+      "pearson_r": 0.987725062778313,
+      "p_value": 1.3369798530864922e-77,
+      "n": 96
+    },
+    "H3K56ac_vs_DunedinPACE": {
+      "pearson_r": 0.9810546261494526,
+      "p_value": 8.301074949014185e-69,
+      "n": 96
+    }
+  },
+  "peak_calling": {
+    "n_peaks": 463,
+    "n_candidates": 512,
+    "bg_call_rate": 0.05,
+    "null_call_prob": 0.007250000000000001,
+    "observed_call_rate": 0.904296875,
+    "fdr": 0.008017278617710585,
+    "replicates": 3,
+    "calling": "depth>=60 in >=2/3 replicates",
+    "model": "binomial(3,p0) replicate-support null, Q = p_null/p_obs"
+  },
+  "alignment": {
+    "total_reads": 300000,
+    "kept_reads": 299069,
+    "kept_frac": 0.9968966666666667,
+    "mapq_mean": 45.95591,
+    "mapq_median": 46.0,
+    "mapq_threshold": 30
+  },
+  "docker_image_path": "image/pace-pipeline.img",
+  "data_deposit_doi": "10.5281/zenodo.16640719",
+  "report": "report/pace_report.pdf",
+  "runtime_sec": 0.009
+}

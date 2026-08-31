@@ -1,1 +1,6 @@
-requirements.txt
+__pycache__/
+*.pyc
+data/demo/
+data_deposit/package/
+.snakemake/
+.pytest_cache/

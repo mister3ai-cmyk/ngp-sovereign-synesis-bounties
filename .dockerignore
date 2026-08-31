@@ -1,0 +1,9 @@
+.git
+results
+data/demo
+__pycache__
+*.pyc
+.env
+BOUNTY_TASK_SPEC.md
+data_deposit
+*.pdf

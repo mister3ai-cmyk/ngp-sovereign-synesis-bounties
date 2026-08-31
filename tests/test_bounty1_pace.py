@@ -3,9 +3,9 @@ Automated acceptance tests for Bounty #1: ChIP-seq & DunedinPACE Pipeline.
 Run: pytest tests/test_bounty1_pace.py -v
 """
 import json
-import math
 import pathlib
 import subprocess
+
 import pytest
 
 REFERENCE_INTERCEPT = 51.024577

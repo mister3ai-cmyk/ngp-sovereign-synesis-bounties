@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SiLA 2 feature descriptor: Hamilton Microlab STARlet liquid handler
+  exposed as a SiLA 2 (ISO 23166) feature over gRPC for the DryLab4
+  bridge (Bounty #3).
+-->
+<siLA2:Feature xmlns:siLA2="http://sila.org/schema/sila2/v1"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://sila.org/schema/sila2/v1 schemas/sila2_core_v1.0.0.xsd"
+               name="org.hamilton.starlet"
+               type="org.hamilton.starlet.v1"
+               version="1.0.0">
+  <siLA2:Description>Hamilton Microlab STARlet liquid handler, exposed as a SiLA 2 feature (ISO 23166) for DryLab4 HPLC bridge control.</siLA2:Description>
+  <siLA2:Method name="getVersion" synchronous="true">
+    <siLA2:Description>Returns the instrument/firmware version string.</siLA2:Description>
+    <siLA2:Parameter name="version" type="string" direction="OUT"/>
+  </siLA2:Method>
+  <siLA2:Method name="getRunStatus" synchronous="true">
+    <siLA2:Description>Returns the current run state (IDLE|RUNNING|PAUSED|ERROR).</siLA2:Description>
+    <siLA2:Parameter name="state" type="string" direction="OUT"/>
+  </siLA2:Method>
+  <siLA2:Method name="startRun" synchronous="false">
+    <siLA2:Description>Starts a pre-configured liquid-handling run.</siLA2:Description>
+    <siLA2:Parameter name="scriptRef" type="string" direction="IN"/>
+    <siLA2:Parameter name="runHandle" type="string" direction="OUT"/>
+  </siLA2:Method>
+  <siLA2:Method name="stopRun" synchronous="true">
+    <siLA2:Description>Stops the active run.</siLA2:Description>
+    <siLA2:Parameter name="runHandle" type="string" direction="IN"/>
+  </siLA2:Method>
+  <siLA2:Method name="getLiquidLevel" synchronous="true">
+    <siLA2:Description>Residual volume per source well.</siLA2:Description>
+    <siLA2:Parameter name="wellId" type="string" direction="IN"/>
+    <siLA2:Parameter name="volumeUL" type="double" direction="OUT"/>
+  </siLA2:Method>
+</siLA2:Feature>

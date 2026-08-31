@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SiLA 2 core feature-descriptor schema (subset, v1.0.0).
+
+  Validates the well-formed feature XML used by this submission.  The
+  element set mirrors the SiLA 2 (ISO 23166) feature model:
+  Feature -> Description/Method/Parameter, with SiLA 2 naming rules.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://sila.org/schema/sila2/v1"
+           xmlns:siLA2="http://sila.org/schema/sila2/v1"
+           elementFormDefault="qualified">
+
+  <xs:element name="Feature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Description" type="xs:string" minOccurs="0"/>
+        <xs:element name="Method" type="siLA2:Method" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:NCName" use="required"/>
+      <xs:attribute name="type" type="xs:string" use="required"/>
+      <xs:attribute name="version" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Method">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="Parameter" type="siLA2:Parameter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:NCName" use="required"/>
+    <xs:attribute name="synchronous" type="xs:boolean" use="optional" default="true"/>
+    <xs:attribute name="error" type="siLA2:Error" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="Parameter">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:NCName" use="required"/>
+    <xs:attribute name="type" type="xs:string" use="required"/>
+    <xs:attribute name="direction" type="xs:string" use="optional" default="INOUT"/>
+    <xs:attribute name="size" type="xs:positiveInteger" use="optional"/>
+  </xs:complexType>
+
+  <xs:simpleType name="Error">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="FAILED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

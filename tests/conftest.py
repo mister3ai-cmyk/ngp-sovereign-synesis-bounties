@@ -1,6 +1,9 @@
 """Shared pytest configuration for NGP Sovereign Synesis bounty test suites."""
+import sys
 import pathlib
 import pytest
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent.parent.resolve()))
 
 
 def pytest_configure(config):

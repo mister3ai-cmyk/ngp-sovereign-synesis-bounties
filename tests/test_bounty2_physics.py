@@ -123,3 +123,32 @@ def test_arxiv_preprint(manifest):
     arxiv_id = manifest.get("arxiv_preprint_id", "")
     assert arxiv_id, "arxiv_preprint_id not set in manifest"
     assert arxiv_id.startswith("2"), f"Invalid arXiv ID format: {arxiv_id}"
+
+
+# Physical constants added from NGP 4.5 Technical Report (§Shield 1, LENR section)
+D0_PHASE_S1_PM = 0.56          # ultra-dense D(0) s=1 internuclear distance
+D0_PHASE_S1_TOLERANCE = 0.02   # pm
+GAMMA_511_LIFETIME_US = 2.2    # positron quasi-particle lifetime, μs
+GAMMA_511_LIFETIME_TOL = 0.1   # μs
+
+
+# ---------------------------------------------------------------------------
+# Test 8: D(0) ultra-dense phase s=1 bond length at 0.56 pm
+# ---------------------------------------------------------------------------
+def test_d0_phase_s1_bond(manifest):
+    """D(0) s=1 phase internuclear distance must be 0.56 ± 0.02 pm (Holmlid)."""
+    bond_s1 = manifest["d0_cluster"]["phase_s1_bond_length_pm"]
+    assert abs(bond_s1 - D0_PHASE_S1_PM) <= D0_PHASE_S1_TOLERANCE, (
+        f"D(0) s=1 phase bond {bond_s1:.3f} pm, required {D0_PHASE_S1_PM} ± {D0_PHASE_S1_TOLERANCE} pm"
+    )
+
+
+# ---------------------------------------------------------------------------
+# Test 9: 511 keV positron quasi-particle lifetime ≈ 2.2 μs
+# ---------------------------------------------------------------------------
+def test_gamma_511_particle_lifetime(manifest):
+    """Metastable leptonic quasi-particle lifetime must be 2.2 ± 0.1 μs (Heff marker)."""
+    lifetime_us = manifest["gamma_511"]["positron_lifetime_us"]
+    assert abs(lifetime_us - GAMMA_511_LIFETIME_US) <= GAMMA_511_LIFETIME_TOL, (
+        f"511 keV positron lifetime {lifetime_us:.2f} μs, required {GAMMA_511_LIFETIME_US} ± {GAMMA_511_LIFETIME_TOL} μs"
+    )

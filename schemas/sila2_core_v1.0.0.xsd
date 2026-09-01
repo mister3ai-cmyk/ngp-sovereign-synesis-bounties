@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.sila-standard.org"
+           xmlns="http://www.sila-standard.org"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <!-- Root Element -->
+    <xs:element name="Feature" type="FeatureType"/>
+
+    <!-- Feature Type -->
+    <xs:complexType name="FeatureType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Command" type="CommandType"/>
+                <xs:element name="Property" type="PropertyType"/>
+                <xs:element name="DefinedExecutionError" type="DefinedExecutionErrorType"/>
+                <xs:element name="DataTypeDefinition" type="DataTypeDefinitionType"/>
+                <xs:element name="Metadata" type="MetadataType"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="SiLA2Version" type="xs:string" use="required"/>
+        <xs:attribute name="FeatureVersion" type="xs:string" use="required"/>
+        <xs:attribute name="MaturityLevel" type="MaturityLevelType" use="required"/>
+        <xs:attribute name="Originator" type="xs:string" use="required"/>
+        <xs:attribute name="Category" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Maturity Level -->
+    <xs:simpleType name="MaturityLevelType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Draft"/>
+            <xs:enumeration value="Verified"/>
+            <xs:enumeration value="Normative"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Identifier Type -->
+    <xs:simpleType name="IdentifierType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-zA-Z0-9_]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Observable Type -->
+    <xs:simpleType name="ObservableType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Yes"/>
+            <xs:enumeration value="No"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Command Type -->
+    <xs:complexType name="CommandType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="Observable" type="ObservableType"/>
+            <xs:element name="Parameter" type="ParameterType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Response" type="ResponseType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="IntermediateResponse" type="ResponseType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="DefinedExecutionError" type="IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Property Type -->
+    <xs:complexType name="PropertyType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="Observable" type="ObservableType"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+            <xs:element name="DefinedExecutionError" type="IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Parameter Type -->
+    <xs:complexType name="ParameterType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Response Type -->
+    <xs:complexType name="ResponseType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Defined Execution Error -->
+    <xs:complexType name="DefinedExecutionErrorType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Data Type Definition -->
+    <xs:complexType name="DataTypeDefinitionType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Metadata Type -->
+    <xs:complexType name="MetadataType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+            <xs:element name="DefinedExecutionError" type="IdentifierType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Data Type Structure -->
+    <xs:complexType name="DataTypeType">
+        <xs:choice>
+            <xs:element name="Basic" type="BasicDataTypeType"/>
+            <xs:element name="List" type="ListDataTypeType"/>
+            <xs:element name="Structure" type="StructureDataTypeType"/>
+            <xs:element name="DataTypeIdentifier" type="IdentifierType"/>
+            <xs:element name="Constrained" type="ConstrainedDataTypeType"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- Basic Data Types -->
+    <xs:simpleType name="BasicDataTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="String"/>
+            <xs:enumeration value="Integer"/>
+            <xs:enumeration value="Real"/>
+            <xs:enumeration value="Boolean"/>
+            <xs:enumeration value="Binary"/>
+            <xs:enumeration value="Date"/>
+            <xs:enumeration value="Time"/>
+            <xs:enumeration value="Timestamp"/>
+            <xs:enumeration value="Any"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- List Data Type -->
+    <xs:complexType name="ListDataTypeType">
+        <xs:sequence>
+            <xs:element name="DataType" type="DataTypeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Structure Data Type -->
+    <xs:complexType name="StructureDataTypeType">
+        <xs:sequence>
+            <xs:element name="Element" type="StructureElementType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Structure Element -->
+    <xs:complexType name="StructureElementType">
+        <xs:sequence>
+            <xs:element name="Identifier" type="IdentifierType"/>
+            <xs:element name="DisplayName" type="xs:string"/>
+            <xs:element name="Description" type="xs:string"/>
+            <xs:element name="DataType" type="DataTypeType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Constrained Data Type -->
+    <xs:complexType name="ConstrainedDataTypeType">
+        <xs:sequence>
+            <xs:element name="DataType" type="DataTypeType"/>
+            <xs:element name="Constraints" type="ConstraintsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Constraints -->
+    <xs:complexType name="ConstraintsType">
+        <xs:sequence>
+            <xs:element name="Length" type="xs:long" minOccurs="0"/>
+            <xs:element name="MinimalLength" type="xs:long" minOccurs="0"/>
+            <xs:element name="MaximalLength" type="xs:long" minOccurs="0"/>
+            <xs:element name="Pattern" type="xs:string" minOccurs="0"/>
+            <xs:element name="MaximalExclusive" type="xs:string" minOccurs="0"/>
+            <xs:element name="MaximalInclusive" type="xs:string" minOccurs="0"/>
+            <xs:element name="MinimalInclusive" type="xs:string" minOccurs="0"/>
+            <xs:element name="MinimalExclusive" type="xs:string" minOccurs="0"/>
+            <xs:element name="Unit" type="UnitType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="UnitType">
+        <xs:sequence>
+            <xs:element name="Component" type="UnitComponentType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="label" type="xs:string" use="optional"/>
+        <xs:attribute name="factor" type="xs:double" use="optional"/>
+        <xs:attribute name="offset" type="xs:double" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="UnitComponentType">
+        <xs:attribute name="SIUnit" type="xs:string" use="required"/>
+        <xs:attribute name="exponent" type="xs:int" use="required"/>
+    </xs:complexType>
+
+</xs:schema>

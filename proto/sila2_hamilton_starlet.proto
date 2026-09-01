@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package sila2.hamilton.starlet;
+
+import "sila2/framework.proto";
+
+service HamiltonSTARletFeature {
+    option (sila2.framework.FeatureIdentifier) = {
+        identifier: "sila2.hamilton.starlet"
+        name: "Hamilton STARlet Liquid Handler"
+        description: "SiLA 2 Feature for Hamilton Microlab STARlet integration."
+        version: "1.0.0"
+    };
+
+    rpc ExecuteMethod(ExecuteMethodRequest) returns (ExecuteMethodResponse) {}
+    rpc GetStatus(GetStatusRequest) returns (GetStatusResponse) {}
+}
+
+message ExecuteMethodRequest {
+    string method_name = 1;
+    map<string, string> parameters = 2;
+    string operation_id = 3;
+    string actor = 4;
+}
+
+message ExecuteMethodResponse {
+    string operation_id = 1;
+    bool success = 2;
+    string message = 3;
+}
+
+message GetStatusRequest {}
+
+message GetStatusResponse {
+    string status = 1;
+    int64 timestamp_ns = 2;
+}

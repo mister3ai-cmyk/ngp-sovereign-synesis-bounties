@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  sila2-bridge:
+    build: .
+    ports:
+      - "50051:50051"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./audit_trail.jsonl:/app/audit_trail.jsonl
+      - ./results:/app/results

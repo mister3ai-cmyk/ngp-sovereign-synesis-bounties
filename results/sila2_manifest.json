@@ -1,0 +1,17 @@
+{
+  "feature_identifier": "sila2.hamilton.starlet",
+  "version": "1.0.0",
+  "services": [
+    "HamiltonSTARletFeature"
+  ],
+  "integrations": [
+    "DryLab4",
+    "WatersEmpower",
+    "AgilentOpenLabCDS"
+  ],
+  "compliance": [
+    "ICH_Q14",
+    "SiLA2_v1.0.0"
+  ],
+  "clock_frequency_hz": 432
+}

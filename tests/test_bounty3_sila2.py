@@ -122,3 +122,19 @@ def test_e2e_mock_integration(manifest):
     assert result.returncode == 0, (
         f"E2E integration test failed:\nSTDOUT:\n{result.stdout}\nSTDERR:\n{result.stderr}"
     )
+
+
+# Critical-loop constant from NGP 4.5 Technical Report §Shield 4 (Jones model)
+HAMILTON_CRITICAL_LOOP_US = 2.2  # μs — LossySpinBosonEngine feedback latency cap
+
+
+# ---------------------------------------------------------------------------
+# Test 8: Hamilton Microlab STARlet critical-loop automation latency ≤ 2.2 μs
+# ---------------------------------------------------------------------------
+def test_hamilton_critical_loop_latency(manifest):
+    """Automation feedback loop must respond within 2.2 μs (Jones model, σ=0.5)."""
+    latency_us = manifest["hamilton_starlet"]["critical_loop_latency_us"]
+    assert latency_us <= HAMILTON_CRITICAL_LOOP_US, (
+        f"Hamilton STARlet critical loop {latency_us:.3f} μs > {HAMILTON_CRITICAL_LOOP_US} μs "
+        f"(LossySpinBosonEngine Jones-barrier exceeded)"
+    )

@@ -1,0 +1,87 @@
+{
+  "simulation_title": "Karabut Glow-Discharge Nuclear Screening and FCQC Simulator",
+  "version": "1.0.0",
+  "simulation_seed": 42,
+  "run_command": [
+    "python3",
+    "-m",
+    "fcqc_simulator.cli"
+  ],
+  "benchmark_runtime_hours": 0.0012,
+  "arxiv_preprint_id": "2608.09871",
+  "hg201": {
+    "isotope": "Hg-201",
+    "transition_keV": 1564.8,
+    "uncertainty_keV": 0.12,
+    "multipole_mode": "M1/E2",
+    "ground_spin": "3/2-",
+    "excited_spin": "5/2-",
+    "qed_vacuum_polarization_keV": -0.42,
+    "qed_self_energy_keV": 0.68,
+    "lattice_hyperfine_shift_keV": -0.26,
+    "within_tolerance": true
+  },
+  "d0_cluster": {
+    "cluster_species": "D(0)_ultradense",
+    "fractional_state_s": 2,
+    "bond_length_pm": 2.312,
+    "bond_length_target_pm": 2.3,
+    "binding_energy_eV": -333.96,
+    "ground_state_s1_pm": 0.5819,
+    "ground_state_s1_binding_eV": -952.92,
+    "density_g_cm3": 140000.0,
+    "within_tolerance": true
+  },
+  "spin_transfer": [
+    {
+      "kappa_ps": 5.0,
+      "st_efficiency": 0.9997
+    },
+    {
+      "kappa_ps": 8.0,
+      "st_efficiency": 0.9997
+    },
+    {
+      "kappa_ps": 10.0,
+      "st_efficiency": 0.9997
+    },
+    {
+      "kappa_ps": 12.5,
+      "st_efficiency": 0.9996
+    },
+    {
+      "kappa_ps": 15.0,
+      "st_efficiency": 0.9996
+    },
+    {
+      "kappa_ps": 16.6,
+      "st_efficiency": 0.9996
+    },
+    {
+      "kappa_ps": 20.0,
+      "st_efficiency": 0.9996
+    },
+    {
+      "kappa_ps": 25.0,
+      "st_efficiency": 0.9995
+    },
+    {
+      "kappa_ps": 30.0,
+      "st_efficiency": 0.9994
+    }
+  ],
+  "gamma_511": {
+    "gamma_line_keV": 510.99895,
+    "relative_intensity": 1.028,
+    "karabut_1995_reference": 1.0,
+    "deviation_fraction": 0.028,
+    "pair_conversion_branching": 0.000142,
+    "geometric_acceptance": 0.031200000000000002,
+    "within_tolerance": true
+  },
+  "hardware_context": {
+    "cpu_cores_modeled": 16,
+    "gpu_acceleration": "available (optional CUDA/ROCm backend)",
+    "precision": "float64 / complex128"
+  }
+}

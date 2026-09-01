@@ -100,3 +100,24 @@ def test_mapq_filter(manifest):
 def test_data_deposit_doi(manifest):
     doi = manifest.get("data_deposit_doi", "")
     assert doi.startswith("10."), f"Invalid or missing DOI: '{doi}'"
+
+
+# ---------------------------------------------------------------------------
+# Test 8: ChIP-seq library quality — IDR and NRF
+# ---------------------------------------------------------------------------
+IDR_THRESHOLD = 0.05
+NRF_THRESHOLD = 0.9
+
+
+def test_chip_seq_library_quality(manifest):
+    """IDR ≤ 0.05 and NRF > 0.9 for both H3K9ac and H3K56ac (spec §Bounty1 QC)."""
+    qc = manifest["chip_seq_qc"]
+    for mark in ["H3K9ac", "H3K56ac"]:
+        idr = qc[mark]["idr"]
+        nrf = qc[mark]["nrf"]
+        assert idr <= IDR_THRESHOLD, (
+            f"{mark} IDR {idr:.4f} > {IDR_THRESHOLD} — irreproducible peak calls"
+        )
+        assert nrf > NRF_THRESHOLD, (
+            f"{mark} NRF {nrf:.4f} ≤ {NRF_THRESHOLD} — library complexity too low"
+        )

@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package org.silastandard.instruments.hamiltonstarlet.v1;
+
+service HamiltonSTARletFeature {
+    // SiLA 2 Commands
+    rpc InitializeDeck (InitializeDeckRequest) returns (InitializeDeckResponse);
+    rpc PrepareDryLabSequence (PrepareDryLabSequenceRequest) returns (PrepareDryLabSequenceResponse);
+    rpc TriggerHPLCRun (TriggerHPLCRunRequest) returns (TriggerHPLCRunResponse);
+    rpc AcquireCDSData (AcquireCDSDataRequest) returns (AcquireCDSDataResponse);
+    rpc PredictRetentionTimes (PredictRetentionTimesRequest) returns (PredictRetentionTimesResponse);
+    rpc ExecuteMethod (ExecuteMethodRequest) returns (ExecuteMethodResponse);
+
+    // SiLA 2 Properties & Telemetry
+    rpc GetStatus (GetStatusRequest) returns (GetStatusResponse);
+    rpc GetMasterClockSync (GetMasterClockSyncRequest) returns (GetMasterClockSyncResponse);
+    rpc GetAuditTrail (GetAuditTrailRequest) returns (GetAuditTrailResponse);
+}
+
+message InitializeDeckRequest {
+    string deck_layout = 1;
+    string actor = 2;
+    string operation_id = 3;
+}
+
+message InitializeDeckResponse {
+    bool success = 1;
+    string status = 2;
+    string timestamp = 3;
+}
+
+message PrepareDryLabSequenceRequest {
+    string sequence_configuration_json = 1;
+    string actor = 2;
+    string operation_id = 3;
+}
+
+message PrepareDryLabSequenceResponse {
+    bool success = 1;
+    int32 prepared_vials_count = 2;
+    string details_json = 3;
+    string timestamp = 4;
+}
+
+message TriggerHPLCRunRequest {
+    string vial_position = 1;
+    double injection_volume_ul = 2;
+    string actor = 3;
+    string operation_id = 4;
+}
+
+message TriggerHPLCRunResponse {
+    bool success = 1;
+    string run_id = 2;
+    string timestamp = 3;
+}
+
+message AcquireCDSDataRequest {
+    string run_id = 1;
+    string cds_source = 2; // "Waters_Empower" or "Agilent_OpenLab"
+    string actor = 3;
+    string operation_id = 4;
+}
+
+message AcquireCDSDataResponse {
+    bool success = 1;
+    string cds_results_json = 2;
+    string timestamp = 3;
+}
+
+message PredictRetentionTimesRequest {
+    string method_parameters_json = 1;
+    string actor = 2;
+    string operation_id = 3;
+}
+
+message PredictRetentionTimesResponse {
+    bool success = 1;
+    string prediction_results_json = 2;
+    string timestamp = 3;
+}
+
+message ExecuteMethodRequest {
+    string method_name = 1;
+    map<string, string> parameters = 2;
+    string actor = 3;
+    string operation_id = 4;
+}
+
+message ExecuteMethodResponse {
+    bool success = 1;
+    string result_json = 2;
+    string message = 3;
+    string timestamp = 4;
+}
+
+message GetStatusRequest {
+    string actor = 1;
+}
+
+message GetStatusResponse {
+    string state = 1; // IDLE, RUNNING, PAUSED, ERROR
+    string deck_status = 2;
+    string clock_sync_status = 3;
+    string timestamp = 4;
+    int64 clock_tick_count = 5;
+}
+
+message GetMasterClockSyncRequest {
+    string actor = 1;
+}
+
+message GetMasterClockSyncResponse {
+    double frequency_hz = 1;
+    double jitter_ms_60s_window = 2;
+    double utc_offset_ms = 3;
+    bool ptp_locked = 4;
+    string timestamp = 5;
+}
+
+message GetAuditTrailRequest {
+    int32 max_records = 1;
+    string actor = 2;
+}
+
+message GetAuditTrailResponse {
+    repeated string audit_records_json = 1;
+    int32 total_count = 2;
+    string latest_hash = 3;
+}

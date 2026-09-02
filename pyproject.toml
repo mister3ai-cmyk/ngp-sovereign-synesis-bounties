@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sila2-drylab4-starlet-bridge"
+version = "1.0.0"
+description = "SiLA 2 Robotic Laboratory Bridge for DryLab4 and Hamilton Microlab STARlet"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Universal Engineer", email = "engineer@sovereign-synesis.org" }
+]
+dependencies = [
+    "grpcio>=1.60.0",
+    "protobuf>=4.25.0",
+    "numpy>=1.24.0",
+    "lxml>=5.0.0",
+    "pydantic>=2.5.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0"
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["."]
+python_files = ["test_*.py"]
+markers = [
+    "integration: Integration tests requiring Docker or real hardware",
+    "slow: Tests with long execution times"
+]

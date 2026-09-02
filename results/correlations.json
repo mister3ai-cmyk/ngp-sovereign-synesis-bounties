@@ -1,0 +1,14 @@
+{
+  "H3K9ac_vs_DunedinPACE": {
+    "pearson_r": 0.9711413313361249,
+    "p_value": 1.5018545144366618e-07,
+    "n_samples": 12,
+    "metric": "age-associated acetylation loss at SIRT6 targets (mean -log2 IP/input)"
+  },
+  "H3K56ac_vs_DunedinPACE": {
+    "pearson_r": 0.9503648142284316,
+    "p_value": 2.1823693680547326e-06,
+    "n_samples": 12,
+    "metric": "age-associated acetylation loss at SIRT6 targets (mean -log2 IP/input)"
+  }
+}

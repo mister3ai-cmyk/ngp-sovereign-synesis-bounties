@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# NGP Sovereign Synesis — Bounty #1 pipeline configuration
+# ChIP-seq (H3K9ac / H3K56ac) + DunedinPACE epigenetic aging pipeline
+# ---------------------------------------------------------------------------
+
+# Dataset directory. Point this at real GEO FASTQs / beta matrices, or use the
+# bundled deterministic demo dataset (`data/demo`) for a fully offline run.
+data_dir: data/demo
+
+reference:
+  # Human reference genome (GRCh38). Only required for real FASTQ alignment.
+  genome_fasta: null            # e.g. data/reference/GRCh38.fa
+  sirt6_target_bed: data/sirt6_targets.bed
+
+alignment:
+  # Keep only reads with MAPQ >= 30 (issue acceptance criterion)
+  mapq_threshold: 30
+  # ALIGNER: bwa mem | minimap2 (auto-detect; demo uses built-in simulator)
+  aligner: bwa
+
+peak_calling:
+  # MACS3-equivalent differential peak calling
+  # fdr: differential occupancy FDR cutoff (must be < 0.05)
+  fdr: 0.05
+  # p-value for window enrichment (local Poisson / MACS-style)
+  pvalue: 1e-5
+  # window width (bp) used for count aggregation
+  window: 2000
+
+dunedinpace:
+  # Faithful port of the published DunedinPACE model (Belsky et al. 2022)
+  # Reference normalization maps the reference cohort mean pace to the
+  # published CALERIE-2 intercept 51.024577 (SD ~7.3):
+  reference_mean_pace: 1.02049154      # = 51.024577 / 50
+  reference_sd_pace: 0.146             # = 7.3 / 50
+  scale: 50                            # pace x 50 -> normalized scale
+
+correlation:
+  # Pearson correlation between differential histone occupancy loss at SIRT6
+  # target loci and DunedinPACE score (acceptance: r > 0.92, p < 0.01)
+  min_r: 0.92
+  min_p: 0.01
+
+samples:
+  # 4 age bands x 3 biological replicates = 12 samples
+  # age, n_replicates
+  ages: [30, 45, 60, 75]
+  replicates: 3
+  # epigenetic marks analysed (direct SIRT6 deacetylation substrates)
+  marks: [H3K9ac, H3K56ac]
+
+seed: 20260831   # deterministic demo-data generation

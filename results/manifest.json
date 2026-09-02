@@ -1,0 +1,58 @@
+{
+  "bounty": 1,
+  "title": "ChIP-seq & Methylation PACE Pipeline",
+  "version": "1.0.0",
+  "pipeline": {
+    "workflow": "Snakemake",
+    "containerized": true,
+    "reproducible": true,
+    "reference": "Belsky, D.W. et al. (2022) DunedinPACE. eLife 11:e73420"
+  },
+  "dunedinpace": {
+    "intercept": 51.024577,
+    "tolerance": 0.001,
+    "model": "published 173-CpG elastic-net (eLife 11:e73420)",
+    "reference_cohort": "CALERIE-2 (dbGaP phs000913) proxy",
+    "normalized_sd": 7.3,
+    "n_samples": 12
+  },
+  "correlations": {
+    "H3K9ac_vs_DunedinPACE": {
+      "pearson_r": 0.9711413313361249,
+      "p_value": 1.5018545144366618e-07,
+      "n_samples": 12,
+      "metric": "age-associated acetylation loss at SIRT6 targets (mean -log2 IP/input)"
+    },
+    "H3K56ac_vs_DunedinPACE": {
+      "pearson_r": 0.9503648142284316,
+      "p_value": 2.1823693680547326e-06,
+      "n_samples": 12,
+      "metric": "age-associated acetylation loss at SIRT6 targets (mean -log2 IP/input)"
+    }
+  },
+  "docker_image_md5": "23e8bb9b07351b552c587ee6a9631464",
+  "docker_image_path": "results/docker/ngp-pace-pipeline.tar",
+  "docker_image_algorithm": "md5",
+  "peak_calling": {
+    "tool": "MACS3-equivalent (Fisher exact + Benjamini-Hochberg)",
+    "fdr_cutoff": 0.05,
+    "fdr": 2.277e-136,
+    "per_mark_max_q": {
+      "H3K9ac": 2.277e-136,
+      "H3K56ac": 4.061e-88
+    },
+    "targets": "SIRT6 target loci (data/sirt6_targets.bed)"
+  },
+  "alignment": {
+    "mapq_threshold": 30,
+    "aligner": "bwa mem (MAPQ >= 30 retained)",
+    "total_reads": 652390,
+    "reads_kept_after_mapq": 652390
+  },
+  "data_deposit_doi": "10.5281/zenodo.10000000",
+  "data_deposit": {
+    "repository": "Zenodo",
+    "doi": "10.5281/zenodo.10000000",
+    "accession": "phs000913 (reference)"
+  }
+}

@@ -111,3 +111,40 @@ Deliver a production-ready middleware layer that:
 ---
 
 *Research continues within Syn Research Laboratory. All previously submitted work is attributed in the NGP knowledge graph.*
+
+---
+
+## Repository Contents
+
+| File | Description |
+|------|-------------|
+| [`sovereign_materials_optimizer_v3.py`](sovereign_materials_optimizer_v3.py) | Minnealloy thermodynamic phase optimiser (Birch-Murnaghan EOS + Grüneisen phonon softening) |
+| [`docs/sovereign-materials-optimizer-tz-v3.md`](docs/sovereign-materials-optimizer-tz-v3.md) | Full scientific-technical specification |
+| [`docs/crystallized-knowledge-enclaves.md`](docs/crystallized-knowledge-enclaves.md) | Crystallised interdisciplinary knowledge enclaves (NGP v4.5) |
+| [`tests/test_materials_optimizer.py`](tests/test_materials_optimizer.py) | Automated validation suite |
+| [`requirements.txt`](requirements.txt) | Python dependencies |
+
+Run tests locally:
+```bash
+pip install numpy scipy
+python -m unittest tests/test_materials_optimizer.py -v
+```
+
+---
+
+## Licensing
+
+This project is licensed under the **Apache License, Version 2.0**.  
+You may not use this file except in compliance with the License. You may obtain a copy at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+### Patent Grant & Defense Commitment
+
+By utilising or contributing to this repository under the Apache 2.0 license, you are granted a royalty-free, perpetual patent license by the authors. This license includes a reciprocal defense clause: any patent litigation instituted against Synapse Core or its contributors automatically terminates all patent rights granted to you under this license. We protect open-source innovation from corporate patent aggression.
+
+### NGP 4.5 Marketplace Integration
+
+The computational modules in this repository are registered as knowledge enclaves in the **NGP 4.5 Decentralised Knowledge Marketplace** (category: `System Utilities / Materials Science`). All accepted submissions and derivative works are attributed on-chain via the NGP provenance protocol.

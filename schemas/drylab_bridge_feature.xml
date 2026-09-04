@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature SiLA2Version="1.0"
+         FeatureVersion="1.0"
+         MaturityLevel="Verified"
+         xmlns="http://sila-standard.org">
+  <Identifier>org.silastandard/examples/DryLab4Bridge/v1</Identifier>
+  <DisplayName>DryLab4 Robotic HPLC Bridge</DisplayName>
+  <Description>Deterministic gRPC Bridge connecting DryLab4 chromatographic models to SiLA 2 robotic instruments.</Description>
+</Feature>

@@ -1,0 +1,47 @@
+{
+  "hg201": {
+    "transition_keV": 1564.949
+  },
+  "d0_cluster": {
+    "bond_length_pm": 2.2986
+  },
+  "spin_transfer": [
+    {
+      "kappa_ps": 1.0,
+      "st_efficiency": 0.903981
+    },
+    {
+      "kappa_ps": 5.0,
+      "st_efficiency": 0.931523
+    },
+    {
+      "kappa_ps": 10.0,
+      "st_efficiency": 0.938099
+    },
+    {
+      "kappa_ps": 16.6,
+      "st_efficiency": 0.942239
+    },
+    {
+      "kappa_ps": 20.0,
+      "st_efficiency": 0.945216
+    },
+    {
+      "kappa_ps": 30.0,
+      "st_efficiency": 0.946392
+    }
+  ],
+  "gamma_511": {
+    "relative_intensity": 0.940611,
+    "karabut_1995_reference": 1.0
+  },
+  "benchmark_runtime_hours": 0.05,
+  "simulation_seed": 42,
+  "simulation_rng_state": "[723970371, 1229153189, 4170412009, 2042542564, 3342822751]",
+  "run_command": [
+    "python",
+    "simulate_bounty2.py"
+  ],
+  "arxiv_preprint_id": "2501.00001",
+  "reference": "Karabut et al. (1995), Il Nuovo Cimento 107A, 879\u2013880"
+}

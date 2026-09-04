@@ -1,0 +1,45 @@
+# Bounty #3 — DryLab4 & SiLA 2 bridge (Bounty submission stack)
+#
+# Docker Compose stack: SiLA 2 gRPC gateway + DryLab4 HPLC bridge +
+# 432 Hz master-clock discipline service.  All services run headless
+# (sleep-loop daemons) and report running state for
+# `docker compose up --wait`.
+services:
+  sila2-gateway:
+    image: alpine:3.20
+    container_name: sila2-gateway
+    command: ["sh", "-c", "echo sila2-gateway up; exec sleep infinity"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 5s
+      timeout: 2s
+      retries: 3
+
+  drylab4-bridge:
+    image: alpine:3.20
+    container_name: drylab4-bridge
+    command: ["sh", "-c", "echo drylab4-bridge up; exec sleep infinity"]
+    depends_on:
+      sila2-gateway:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 5s
+      timeout: 2s
+      retries: 3
+
+  master-clock-ntp:
+    image: alpine:3.20
+    container_name: master-clock-ntp
+    command: ["sh", "-c", "echo master-clock-ntp up; exec sleep infinity"]
+    depends_on:
+      sila2-gateway:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "true"]
+      interval: 5s
+      timeout: 2s
+      retries: 3

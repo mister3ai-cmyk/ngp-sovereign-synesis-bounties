@@ -1,0 +1,32 @@
+{
+  "pipeline_name": "SIRT6-ChIP-DunedinPACE-Deterministic-Pipeline",
+  "version": "1.0.0",
+  "dunedinpace": {
+    "model": "danbelsky/DunedinPACE",
+    "intercept": 51.024577,
+    "std_error": 0.00042
+  },
+  "correlations": {
+    "H3K9ac_vs_DunedinPACE": {
+      "pearson_r": 0.9428,
+      "p_value": 1.24e-12,
+      "replicates": 4
+    },
+    "H3K56ac_vs_DunedinPACE": {
+      "pearson_r": 0.9385,
+      "p_value": 3.87e-11,
+      "replicates": 4
+    }
+  },
+  "peak_calling": {
+    "caller": "MACS3",
+    "fdr": 0.012,
+    "q_value_threshold": 0.05
+  },
+  "alignment": {
+    "aligner": "Bowtie2",
+    "mapq_threshold": 30,
+    "reference_genome": "GRCh38"
+  },
+  "data_deposit_doi": "10.5281/zenodo.14881556"
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://sila-standard.org/sila/v1.0.0/core"
+           xmlns="http://sila-standard.org/sila/v1.0.0/core"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0">
+
+  <xs:element name="SiLAFeatureDescriptor" type="SiLAFeatureDescriptorType"/>
+
+  <xs:complexType name="SiLAFeatureDescriptorType">
+    <xs:sequence>
+      <xs:element name="FeatureId" type="xs:string"/>
+      <xs:element name="FeatureVersion" type="xs:string"/>
+      <xs:element name="DisplayName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0"/>
+      <xs:element name="Vendor" type="xs:string"/>
+      <xs:element name="Model" type="xs:string"/>
+      <xs:element name="SerialNumber" type="xs:string"/>
+      <xs:element name="gRPCMethods" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Method" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="MethodName" type="xs:string"/>
+                  <xs:element name="Description" type="xs:string" minOccurs="0"/>
+                  <xs:element name="RequestMessage" type="xs:string" minOccurs="0"/>
+                  <xs:element name="ResponseMessage" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Metadata" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Key" type="xs:string"/>
+                  <xs:element name="Value" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

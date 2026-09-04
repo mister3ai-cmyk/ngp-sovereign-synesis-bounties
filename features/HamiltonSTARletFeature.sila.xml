@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Feature xmlns="http://www.sila-standard.org"
+         SiLA2Version="1.0"
+         FeatureVersion="1.0"
+         MaturityLevel="Verified"
+         Originator="org.silastandard"
+         Category="robotics">
+  <Identifier>HamiltonSTARletFeature</Identifier>
+  <DisplayName>Hamilton Microlab STARlet Controller</DisplayName>
+  <Description>SiLA 2 standard feature for high-precision liquid handling with Hamilton Microlab STARlet.</Description>
+  <SiLA2Version>1.0</SiLA2Version>
+  <FeatureVersion>1.0</FeatureVersion>
+  <MaturityLevel>Verified</MaturityLevel>
+  <Originator>org.silastandard</Originator>
+  <Category>robotics</Category>
+  <Command>
+    <Identifier>AspirateLiquid</Identifier>
+    <DisplayName>Aspirate Liquid</DisplayName>
+    <Description>Aspirates precise volume from specified microplate wells.</Description>
+    <Observable>Yes</Observable>
+  </Command>
+  <Command>
+    <Identifier>DispenseLiquid</Identifier>
+    <DisplayName>Dispense Liquid</DisplayName>
+    <Description>Dispenses liquid into destination HPLC injection vials.</Description>
+    <Observable>Yes</Observable>
+  </Command>
+  <Command>
+    <Identifier>ExecuteHPLCTransfer</Identifier>
+    <DisplayName>Execute HPLC Transfer</DisplayName>
+    <Description>Transfers prepared sample batch to Waters/Agilent autosampler.</Description>
+    <Observable>Yes</Observable>
+  </Command>
+  <Property>
+    <Identifier>DeviceState</Identifier>
+    <DisplayName>Device State</DisplayName>
+    <Description>Current operational state of the STARlet liquid handler.</Description>
+    <Observable>Yes</Observable>
+  </Property>
+</Feature>

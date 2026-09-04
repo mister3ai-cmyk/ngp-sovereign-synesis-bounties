@@ -1,0 +1,5 @@
+{"actor": "system_init", "timestamp": "2026-08-20T12:59:31.219555+00:00", "operation_id": "9558fe47-3b19-48a9-b084-6eba0e7cbec3", "delta": {"action": "INITIALIZE_SILA2_STACK", "version": "1.0.0"}}
+{"actor": "sila2_bridge_agent", "timestamp": "2026-08-20T12:59:31.220120+00:00", "operation_id": "e8ed8d77-20a9-4208-ae2d-4feb99e9a537", "delta": {"action": "CONNECT_HAMILTON_STARLET", "port": "/dev/ttyUSB0", "baud": 115200}}
+{"actor": "drylab4_engine", "timestamp": "2026-08-20T12:59:31.220414+00:00", "operation_id": "3903c4ee-e4e5-412d-a8b7-a05e52a278ec", "delta": {"action": "LOAD_LCCC_MODEL", "model": "RP-C18-UPLC"}}
+{"actor": "ptp_clock_sync", "timestamp": "2026-08-20T12:59:31.220724+00:00", "operation_id": "6fd15d50-88f1-448a-9a6c-8d628b405c82", "delta": {"action": "SYNC_GPS_MASTER_CLOCK", "frequency_hz": 432, "jitter_ms": 0.035}}
+{"actor": "hplc_sampler", "timestamp": "2026-08-20T12:59:31.221022+00:00", "operation_id": "53d0030a-093c-4687-88df-b6db480034b7", "delta": {"action": "RUN_CHROMATOGRAPHY_BATCH", "samples_count": 6}}

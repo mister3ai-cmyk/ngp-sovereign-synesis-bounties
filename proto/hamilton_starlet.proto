@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package sila2.org.silastandard.robotics.hamiltonstarlet.v1;
+
+service HamiltonSTARletService {
+  rpc AspirateLiquid (AspirateRequest) returns (AspirateResponse);
+  rpc DispenseLiquid (DispenseRequest) returns (DispenseResponse);
+  rpc ExecuteHPLCTransfer (TransferRequest) returns (TransferResponse);
+  rpc GetDeviceState (StateRequest) returns (StateResponse);
+}
+
+message AspirateRequest {
+  string channel_id = 1;
+  double volume_ul = 2;
+  string source_position = 3;
+}
+
+message AspirateResponse {
+  bool success = 1;
+  string operation_id = 2;
+  double actual_volume_ul = 3;
+}
+
+message DispenseRequest {
+  string channel_id = 1;
+  double volume_ul = 2;
+  string destination_position = 3;
+}
+
+message DispenseResponse {
+  bool success = 1;
+  string operation_id = 2;
+  double actual_volume_ul = 3;
+}
+
+message TransferRequest {
+  string batch_id = 1;
+  string drylab_method_id = 2;
+  repeated string target_vials = 3;
+}
+
+message TransferResponse {
+  bool success = 1;
+  string run_id = 2;
+  int64 timestamp_utc_ns = 3;
+}
+
+message StateRequest {
+  string query = 1;
+}
+
+message StateResponse {
+  string status = 1;
+  double ptp_jitter_ms = 2;
+}

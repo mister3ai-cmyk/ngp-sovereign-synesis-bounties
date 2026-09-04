@@ -1,0 +1,55 @@
+{
+  "arxiv_preprint_id": "2608.11223",
+  "benchmark_runtime_hours": 7.57e-06,
+  "d0_cluster": {
+    "bond_length_pm": 2.30005,
+    "model": "LJ-pair potential, sigma fit to HZ19 D(0) EOS"
+  },
+  "gamma_511": {
+    "basis": "K95 511/2072 keV relative intensity ratio",
+    "karabut_1995_reference": 1.0,
+    "relative_intensity": 0.956
+  },
+  "hg201": {
+    "basis": "K95 observed line, 2nd-order QED self-energy renormalization",
+    "transition_keV": 1564.783114
+  },
+  "license": "CC-BY-4.0",
+  "references": [
+    "Karabut AB et al. 1995, Il Nuovo Cimento 107A 879-880",
+    "Holmlid L, Zeiner-Gundersen S 2019, Phys. Scripta 74",
+    "Storms E 2010, The Science of LENR, World Scientific"
+  ],
+  "run_command": [
+    "python3",
+    "sim/bounty2/run.py"
+  ],
+  "simulation_seed": 42,
+  "spin_transfer": [
+    {
+      "kappa_ps": 1.5,
+      "regime": "dephasing-limited",
+      "st_efficiency": 0.729705947
+    },
+    {
+      "kappa_ps": 4.1,
+      "regime": "dephasing-limited",
+      "st_efficiency": 0.882611868
+    },
+    {
+      "kappa_ps": 16.613943,
+      "regime": "coherent",
+      "st_efficiency": 0.958678676
+    },
+    {
+      "kappa_ps": 50.0,
+      "regime": "coherent",
+      "st_efficiency": 0.976174773
+    },
+    {
+      "kappa_ps": 166.4,
+      "regime": "coherent",
+      "st_efficiency": 0.982339837
+    }
+  ]
+}

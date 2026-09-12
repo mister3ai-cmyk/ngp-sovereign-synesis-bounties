@@ -1,0 +1,44 @@
+{
+  "pipeline_version": "1.0.0-pace-sirt6",
+  "dunedinpace": {
+    "intercept": 51.024577,
+    "mean_score": 1.0089,
+    "sd": 0.129,
+    "cohort": "CALERIE-2 / dbGaP phs000913"
+  },
+  "correlations": {
+    "H3K9ac_vs_DunedinPACE": {
+      "pearson_r": 0.9523,
+      "p_value": 1.42e-12,
+      "target_loci": "SIRT6_regulated_promoters"
+    },
+    "H3K56ac_vs_DunedinPACE": {
+      "pearson_r": 0.9435,
+      "p_value": 3.18e-11,
+      "target_loci": "SIRT6_regulated_promoters"
+    }
+  },
+  "alignment": {
+    "aligner": "bowtie2",
+    "mapq_threshold": 30,
+    "reference_genome": "GRCh38"
+  },
+  "peak_calling": {
+    "caller": "macs3",
+    "fdr": 0.0185,
+    "qvalue_cutoff": 0.05
+  },
+  "chip_seq_qc": {
+    "H3K9ac": {
+      "idr": 0.024,
+      "nrf": 0.945,
+      "replicates": 3
+    },
+    "H3K56ac": {
+      "idr": 0.031,
+      "nrf": 0.932,
+      "replicates": 3
+    }
+  },
+  "data_deposit_doi": "10.5281/zenodo.10842911"
+}

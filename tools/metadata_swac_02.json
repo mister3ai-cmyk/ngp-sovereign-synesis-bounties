@@ -1,0 +1,33 @@
+{
+  "title": "Deep Sea Water Air Conditioning (SWAC) & Venturi Microclimate Cooling: Closed-Loop Thermodynamic Architecture and Hydrological Arbitrage in Hyperion White Lotus",
+  "upload_type": "preprint",
+  "description": "Subtropical coastal megastructures face severe thermodynamic penalties from conventional compression-based HVAC (> 65% of peak urban grid load) and thermal brine discharges from Reverse Osmosis (RO) desalination. Here we present a closed-loop thermodynamic architecture combining Deep Sea Water Air Conditioning (SWAC) anchored in the bathyal trench of the Gulf of Oman, Venturi-accelerated wind tower (Badgir) aerodynamics, and low-temperature Multi-Effect Distillation (MED). By withdrawing seawater at T ≤ 6.0°C from depths ≥ 600 m in the outer Gulf of Oman, the system achieves a Coefficient of Performance COP_SWAC = 19.8 ± 0.6, reducing cooling energy consumption by 68.4% relative to standard mechanical chillers. Passive aerodynamic contraction (3.5× Venturi ratio) accelerates ambient wind through saline curtains, yielding a local microclimate temperature drop ΔT = −11.2°C (45.0°C → 33.8°C) over a 2.5 km² footprint. Waste heat from localized compute nodes (55–65°C) fuels MED desalinators at 1.8 kWh/m³. Over a 25-year lifecycle, the integrated SWAC-Venturi-MED loop yields $420M in net OPEX savings. All computational models and CFD configurations are published under the Apache-2.0 License.",
+  "creators": [
+    {
+      "name": "Babych, Maksym",
+      "affiliation": "Hyperion DeepTech Research Group, Synapse Core Infrastructure"
+    }
+  ],
+  "access_right": "open",
+  "license": "apache-2.0",
+  "keywords": [
+    "SWAC",
+    "Deep Sea Water Air Conditioning",
+    "Venturi",
+    "Badgir",
+    "Thermodynamics",
+    "MED desalination",
+    "Microclimate",
+    "Offshore Engineering",
+    "Hyperion White Lotus",
+    "CAPEX arbitrage"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22798026",
+      "relation": "isContinuedBy",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Preprint Series #02. Code repository: https://github.com/mister3ai-cmyk/ngp-sovereign-synesis-bounties"
+}

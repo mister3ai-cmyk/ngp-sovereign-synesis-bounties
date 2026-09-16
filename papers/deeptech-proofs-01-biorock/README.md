@@ -5,8 +5,7 @@
 *Hyperion DeepTech Research Group / Synapse Core Infrastructure Initiative*  
 *Published: September 2026*
 
-> DOI badge will appear here after Zenodo upload:  
-> `[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)`
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22798026.svg)](https://doi.org/10.5281/zenodo.22798026)
 
 ---
 

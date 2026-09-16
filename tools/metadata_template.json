@@ -1,0 +1,21 @@
+{
+  "title": "DeepTech Proofs #02: Closed-Loop SWAC Thermodynamics, Venturi Windcatchers, and Hydrological Arbitrage",
+  "upload_type": "preprint",
+  "description": "Abstract of the second paper...",
+  "creators": [
+    {
+      "name": "Babych, Maksym",
+      "affiliation": "Hyperion DeepTech Research Group / Synapse Core Infrastructure Initiative"
+    }
+  ],
+  "access_right": "open",
+  "license": "apache-2.0",
+  "keywords": [
+    "SWAC",
+    "Thermodynamics",
+    "Venturi Effect",
+    "Desalination",
+    "Offshore Engineering",
+    "Hyperion White Lotus"
+  ]
+}

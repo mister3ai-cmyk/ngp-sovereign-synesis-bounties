@@ -5,7 +5,7 @@
 *Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  
 *September 2026*
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PENDING.svg)](https://doi.org/10.5281/zenodo.PENDING)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22819532.svg)](https://doi.org/10.5281/zenodo.22819532)
 
 ---
 

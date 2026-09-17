@@ -6,8 +6,7 @@
 *DIFC, Dubai, UAE — research@hyperion-whitelotus.io*  
 *September 2026*
 
-> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-> *(DOI будет обновлён после публикации на Zenodo)*
+> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22800377.svg)](https://doi.org/10.5281/zenodo.22800377)
 
 ---
 
@@ -57,3 +56,4 @@ papers/deeptech-proofs-02-swac/
 ## License
 
 Apache License 2.0
+

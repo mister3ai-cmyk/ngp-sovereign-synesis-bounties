@@ -5,8 +5,7 @@
 *Maksym Babych — Hyperion DeepTech Research Group, Synapse Core Infrastructure*  
 *September 2026*
 
-> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-> *(DOI будет обновлён после публикации)*
+> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22816555.svg)](https://doi.org/10.5281/zenodo.22816555)
 
 ---
 
@@ -33,3 +32,4 @@ papers/deeptech-proofs-03-photonic-spin/
 ## License
 
 Apache License 2.0
+

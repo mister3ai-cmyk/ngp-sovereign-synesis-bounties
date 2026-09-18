@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://sila-standard.org"
+           xmlns="http://sila-standard.org"
+           elementFormDefault="qualified">
+  <xs:element name="Feature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Identifier" type="xs:string"/>
+        <xs:element name="DisplayName" type="xs:string"/>
+        <xs:element name="Description" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="SiLA2Version" type="xs:string" use="required"/>
+      <xs:attribute name="FeatureVersion" type="xs:string" use="required"/>
+      <xs:attribute name="MaturityLevel" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

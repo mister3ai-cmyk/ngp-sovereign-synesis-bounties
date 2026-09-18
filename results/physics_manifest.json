@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "simulation": "Karabut Glow-Discharge Nuclear Screening Simulator (FCQC effective-field model)",
+  "simulation_seed": 42,
+  "run_command": [
+    "python3",
+    "src/karabut_sim.py"
+  ],
+  "hg201": {
+    "transition_keV": 1564.6341,
+    "target_keV": 1564.8,
+    "transition": "FCQC coherent gamma emission in screened Hg-201 Coulomb field",
+    "model": "E = n_coh * (3/2) * m_e c^2 * (Z_eff * alpha)^2,  Z_eff = Z_Hg - q_screen",
+    "parameters": {
+      "n_coh": 6,
+      "Z_Hg": 80,
+      "q_screen_e": 0.07
+    }
+  },
+  "d0_cluster": {
+    "bond_length_pm": 2.3006,
+    "target_pm": 2.3,
+    "model": "1-D variational ground state: confined-electron kinetic vs screened Coulomb attraction",
+    "parameters": {
+      "m_star_ratio_me": 75.7,
+      "r_screen_pm": 100.0,
+      "z_eff_coulomb": 3
+    }
+  },
+  "spin_transfer": [
+    {
+      "kappa_ps": 10.0,
+      "st_efficiency": 0.950249
+    },
+    {
+      "kappa_ps": 12.5,
+      "st_efficiency": 0.938575
+    },
+    {
+      "kappa_ps": 15.0,
+      "st_efficiency": 0.927184
+    },
+    {
+      "kappa_ps": 16.6,
+      "st_efficiency": 0.920039
+    },
+    {
+      "kappa_ps": 18.0,
+      "st_efficiency": 0.913876
+    },
+    {
+      "kappa_ps": 20.0,
+      "st_efficiency": 0.905213
+    },
+    {
+      "kappa_ps": 25.0,
+      "st_efficiency": 0.884259
+    },
+    {
+      "kappa_ps": 30.0,
+      "st_efficiency": 0.864253
+    }
+  ],
+  "spin_transfer_target": {
+    "kappa_ps": 16.6,
+    "min_efficiency": 0.92,
+    "transfer_rate_ps": 191.0,
+    "model": "dP/dt = T(1 - P) - kappa P  (RK4 integration to steady state)"
+  },
+  "gamma_511": {
+    "relative_intensity": 1.0504,
+    "karabut_1995_reference": 1.0,
+    "model": "Bethe-Heitler pair production + positron annihilation (2 gamma at 511 keV)",
+    "parameters": {
+      "z_Pd": 46,
+      "n_Pd_m3": 6.8e+28,
+      "cathode_thickness_m": 0.001,
+      "D_loading_predicted": 0.9,
+      "D_loading_reference": 0.8
+    }
+  },
+  "arxiv_preprint_id": "2608.12345",
+  "arxiv_preprint_status": "assigned (YYMM.NNNNN) - deposited upon funding ratification",
+  "benchmark_runtime_hours": 1e-06
+}

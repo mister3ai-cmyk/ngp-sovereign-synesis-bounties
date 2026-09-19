@@ -1,5 +1,10 @@
 # NGP 3.0 Sovereign Synesis — Open DeSci Bounty Program
 
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-yellow.svg)](LICENSE)
+> 💼 **Commercial use requires a license** — contact [research@syn.ai](mailto:research@syn.ai)
+
+---
+
 > ⚠️ **PROGRAMME CLOSED**
 > This bounty programme has been officially closed. All research tracks are being absorbed into the **Syn Research Laboratory** internal pipeline. No new submissions are accepted. Thank you to everyone who showed interest.
 >

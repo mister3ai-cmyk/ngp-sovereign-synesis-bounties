@@ -114,6 +114,21 @@ Deliver a production-ready middleware layer that:
 
 ---
 
+## Synapse Core Infrastructure — Engineering Series
+
+Live benchmarks from the production data plane running on a **€5/month VPS** (1 vCPU, 2 GB RAM, no Swap, no GPU).
+
+| Part | Topic | Key Result |
+|------|-------|------------|
+| [Part 1 — SQLite Vector Ingestion](https://www.linkedin.com/posts/maksym-babych-4b250933b_vectordb-sqlite-aiinfrastructure-activity-7501735443001024513-MAe7) | WAL + SIMD on cheap iron | **44,745 vec/sec**, 11 KB RAM delta |
+| [Part 2 — Ebbinghaus Context Compressor](https://www.linkedin.com/posts/maksym-babych-4b250933b_llmoptimization-aiinfrastructure-contextcompression-activity-7501746209234055168-U4Ai) | Token pruning via forgetting curve | **73.66%** token reduction, $11.98 saved/run |
+| [Part 3 — Shared Tensor Ring IPC](https://www.linkedin.com/posts/maksym-babych-4b250933b_aiinfrastructure-zerocopy-sharedmemory-activity-7501759837056286720-o2EZ) | Zero-copy `/dev/shm` transport | **4,667 ns** wire latency, zero serialization |
+| [Part 4 — Grassmannian G(4,R⁶⁴) Quantization](https://www.linkedin.com/posts/maksym-babych-4b250933b_vectorsearch-differentialgeometry-aiinfrastructure-activity-7501768189756960769-qoj2) | Cube-Split 32-bit index | **128× compression**, 4 MB per 1M vectors |
+
+> All measurements from live server stdout. No synthetic environment. No managed services.
+
+---
+
 ## Repository Contents
 
 | File | Description |

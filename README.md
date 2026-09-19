@@ -149,16 +149,21 @@ python -m unittest tests/test_materials_optimizer.py -v
 
 ## Licensing
 
-This project is licensed under the **Apache License, Version 2.0**.  
-You may not use this file except in compliance with the License. You may obtain a copy at:
+This project is licensed under the **Business Source License 1.1 (BSL 1.1)**.
 
-    http://www.apache.org/licenses/LICENSE-2.0
+| Field | Value |
+|-------|-------|
+| Licensor | Maksym Babych / Synapse Core Infrastructure |
+| Additional Use Grant | Free for non-commercial, research, educational, and personal use |
+| Commercial Use | Requires a separate written license — contact **research@syn.ai** |
+| Change Date | **2029-09-19** |
+| Change License | Apache License 2.0 (code becomes fully open-source on Change Date) |
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-### Patent Grant & Defense Commitment
-
-By utilising or contributing to this repository under the Apache 2.0 license, you are granted a royalty-free, perpetual patent license by the authors. This license includes a reciprocal defense clause: any patent litigation instituted against Synapse Core or its contributors automatically terminates all patent rights granted to you under this license. We protect open-source innovation from corporate patent aggression.
+**What this means in practice:**
+- ✅ You can read, study, fork, and experiment freely
+- ✅ Academic research and personal projects are unrestricted
+- ❌ You cannot deploy this commercially, sell it as a service, or embed it in a paid product without a commercial license
+- 🔄 On 2029-09-19, all restrictions expire and the code converts to Apache 2.0 automatically
 
 ### NGP 4.5 Marketplace Integration
 

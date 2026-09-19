@@ -1,1 +1,28 @@
-requirements.txt
+# Python-generated files  
+__pycache__/  
+*.py[cod]  
+*$py.class  
+  
+# Distribution / packaging  
+.eggs/  
+dist/  
+build/  
+  
+# SZ Worker runtime artifacts  
+.sz_worker/  
+.pytest_cache/  
+  
+# Virtual environments  
+.venv/  
+venv/  
+env/  
+  
+# IDE / editor  
+.vscode/  
+.idea/  
+*.swp  
+*.swo  
+  
+# OS  
+Thumbs.db  
+.DS_Store 

@@ -1,0 +1,20 @@
+[project]
+name = "silabridge"
+version = "1.0.0"
+description = "DryLab4 & SiLA 2 Robotic Laboratory Bridge"
+requires-python = ">=3.11"
+dependencies = [
+    "grpcio>=1.83.0",
+    "grpcio-tools>=1.83.0",
+    "protobuf>=7.35.1",
+    "lxml>=6.1.2",
+    "pytest>=9.1.1",
+]
+
+[project.scripts]
+xmllint = "xmllint:main"
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests as integration tests (requires Docker)",
+]

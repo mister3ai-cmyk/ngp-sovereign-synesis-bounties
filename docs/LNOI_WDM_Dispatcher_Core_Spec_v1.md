@@ -3,6 +3,8 @@
 **Author:** Synapse Core Infrastructure (Maksym Babych)  
 **Target Hardware:** Thin-Film Lithium Niobate on Insulator (TFLN / LNOI)  
 **Document Hash Standard:** SHA-256 / eNodo Timestamp Anchor  
+**Zenodo DOI (Priority Anchor):** [10.5281/zenodo.22884782](https://doi.org/10.5281/zenodo.22884782)  
+**Zenodo MD5:** `67be3884f8139e292ec6c28c02910117`  
 
 ---
 

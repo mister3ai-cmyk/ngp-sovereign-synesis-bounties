@@ -1,0 +1,27 @@
+{
+  "simulation_seed": 42,
+  "run_command": [
+    "python3",
+    "/Users/mati/Desktop/ngp-sovereign-synesis-bounties/physics_simulator.py"
+  ],
+  "benchmark_runtime_hours": 0.05,
+  "arxiv_preprint_id": "2408.09876",
+  "hg201": {
+    "transition_keV": 1564.8,
+    "uncertainty_keV": 0.1
+  },
+  "d0_cluster": {
+    "bond_length_pm": 2.3,
+    "screening_energy_eV": 310.4
+  },
+  "spin_transfer": [
+    {
+      "kappa_ps": 16.6,
+      "st_efficiency": 0.945
+    }
+  ],
+  "gamma_511": {
+    "relative_intensity": 1.02,
+    "karabut_1995_reference": 1.0
+  }
+}

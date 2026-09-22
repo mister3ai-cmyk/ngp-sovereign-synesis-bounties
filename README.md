@@ -173,3 +173,18 @@ This project is licensed under the **Business Source License 1.1 (BSL 1.1)**.
 ### NGP 4.5 Marketplace Integration
 
 The computational modules in this repository are registered as knowledge enclaves in the **NGP 4.5 Decentralised Knowledge Marketplace** (category: `System Utilities / Materials Science`). All accepted submissions and derivative works are attributed on-chain via the NGP provenance protocol.
+
+<!-- Fix for issue #3 -->
+```python
+# Copyright 2026 Synapse Core Contributors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# Se

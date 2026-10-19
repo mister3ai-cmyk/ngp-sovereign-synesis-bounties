@@ -5,10 +5,38 @@
 
 ---
 
-> ⚠️ **BOUNTY PROGRAMME ENDED — RESEARCH CONTINUES INTERNALLY**
-> The open bounty programme has ended. **No submissions are accepted and no payouts will be made.** The three research tracks below remain active as internal R&D of **Syn Research Laboratory**; the issues are kept open as a public showcase of ongoing work. Pull requests from outside contributors will be closed without review.
+> ⚠️ **BOUNTY PROGRAMME ENDED — RESEARCH CONTINUES**
+> The open bounty programme has ended. **No submissions are accepted against the historical bounty issues (#1-#3) and no payouts will be made.** Those issues are kept open as a record of the research tracks.
+>
+> **Contributions are open for the 2026-2027 roadmap modules** (`core/`, `models/`, `safety/`) under Apache-2.0. See [`docs/ROADMAP_2026_2027.md`](docs/ROADMAP_2026_2027.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 >
 > For collaboration inquiries, contact: research@syn.ai
+
+---
+
+## Research Roadmap 2026-2027
+
+Active computational milestones, with acceptance criteria and stated limitations in
+[`docs/ROADMAP_2026_2027.md`](docs/ROADMAP_2026_2027.md).
+
+| Milestone | Months | Module | Scope |
+|-----------|--------|--------|-------|
+| M1 — Allosteric pocket docking | 1-3 | [`core/sirt6_resonance/`](core/sirt6_resonance/) | Ligand docking into the characterised SIRT6 allosteric pocket (PDB 5Y2F, 5MF6, 3K35, 5X16); exploratory normal-mode analysis |
+| M2 — Clock calibration & ChIP-seq triage | 4-6 | [`models/dunedin_pace/`](models/dunedin_pace/), [`models/chipseq_triage/`](models/chipseq_triage/) | DunedinPACE calibration on public methylation arrays; H3K9ac / H3K56ac QC and association analysis |
+| M3 — Dedifferentiation screening criteria | 7-9 | [`safety/paleo_shield/`](safety/paleo_shield/) | In-silico boundary constraints, triage harness, open benchmark |
+
+All three are **dry-lab** work on self-hosted compute: simulations, statistical pipelines and
+numerical criteria over public data. They produce no new biological measurements, and no
+output of `safety/paleo_shield/` constitutes a safety assessment — see its
+[`LIMITATIONS.md`](safety/paleo_shield/LIMITATIONS.md).
+
+Current status: **scaffolding**. Configurations, output schemas and acceptance criteria are
+fixed; computations are not implemented yet.
+
+```bash
+pip install pytest pyyaml ruff
+pytest tests/test_scaffolding.py -v
+```
 
 ---
 
@@ -154,7 +182,15 @@ python -m unittest tests/test_materials_optimizer.py -v
 
 ## Licensing
 
-This project is licensed under the **Business Source License 1.1 (BSL 1.1)**.
+This repository uses **two licences**:
+
+| Area | Licence | Notes |
+|------|---------|-------|
+| `core/`, `models/`, `safety/` | **Apache-2.0** | 2026-2027 roadmap modules; each directory carries its own `LICENSE` |
+| Everything else | **Business Source License 1.1** | root [`LICENSE`](LICENSE) |
+
+The terms below apply to the BSL 1.1 portion.
+
 
 | Field | Value |
 |-------|-------|

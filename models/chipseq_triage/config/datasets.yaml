@@ -1,0 +1,25 @@
+# Milestone 2 / D2.2 — public ChIP-seq datasets for H3K9ac / H3K56ac triage.
+#
+# Both marks are reported SIRT6 deacetylation substrates (Michishita et al. 2008;
+# Michishita et al. 2009). Only public accessions are used.
+
+marks:
+  - H3K9ac
+  - H3K56ac
+
+qc:
+  min_mapq: 30            # alignment quality filter
+  peak_caller: macs3
+  fdr_threshold: 0.05     # multiple-testing control on differential peaks
+  min_replicates: 3       # biological, not technical
+  require_input_control: true
+
+datasets: []
+# Populate with public accessions before running, e.g.:
+#   - accession: GSExxxxxx
+#     mark: H3K9ac
+#     cell_type: ...
+#     n_replicates: 3
+#     input_control: GSMxxxxxxx
+
+output_dir: results/chipseq_triage

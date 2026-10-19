@@ -48,6 +48,21 @@ jobs:
         run: pytest tests/test_bounty3_sila2.py -v --tb=short -m "not integration"
         continue-on-error: true
 
+  test-scaffolding:
+    name: "Roadmap 2026-2027 — module scaffolding"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install pytest pyyaml ruff
+      - name: Lint roadmap modules
+        run: ruff check core/ models/ safety/ tests/test_scaffolding.py
+      - name: Run scaffolding tests
+        run: pytest tests/test_scaffolding.py -v --tb=short
+
   lint:
     name: "Code Quality"
     runs-on: ubuntu-latest

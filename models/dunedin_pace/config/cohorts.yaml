@@ -1,0 +1,25 @@
+# Milestone 2 / D2.1 — public methylation datasets for clock calibration.
+#
+# Only public accessions are listed. No controlled-access or individual-level
+# restricted data is used by this module.
+
+reference_implementation:
+  name: DunedinPACE
+  source: https://github.com/danbelsky/DunedinPACE
+  license: GPL-3.0
+  invocation: external_process   # Rscript; never imported or vendored. See README.
+  citation: "Belsky D.W. et al. (2022) eLife 11:e73420"
+
+# Numerical tolerance when comparing our harness output against the reference
+# implementation on the same input. A mismatch above this is a bug, not a result.
+agreement_tolerance: 1.0e-6
+
+cohorts: []
+# Populate with public GEO series before running, e.g.:
+#   - accession: GSExxxxxx
+#     platform: EPIC          # or 450K
+#     tissue: whole_blood
+#     n_samples: 0
+#     notes: "public series; no individual-level restricted data"
+
+output_dir: results/dunedin_pace

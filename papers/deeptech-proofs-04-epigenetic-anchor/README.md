@@ -9,9 +9,15 @@
 
 ---
 
-## Key Results
+## Model predictions (in-silico hypothesis, not experimentally validated)
 
-| Metric | Value |
+The values below are **outputs of a computational model**, not measurements. They have
+not been validated in cells, in animals, or in humans, and they are not a therapeutic
+claim. Testing them computationally is the subject of milestones M1-M3 in
+[`docs/ROADMAP_2026_2027.md`](../../docs/ROADMAP_2026_2027.md); experimental validation
+is outside the scope of this repository.
+
+| Predicted metric | Model output |
 |---|---|
 | SIRT6 deacetylation boost | **4.2×** |
 | LINE-1 retrotransposon suppression | **>85%** |

@@ -1,0 +1,46 @@
+# Milestone 1 docking configuration.
+# Pinned inputs so a reviewer can reproduce a run from a clean checkout.
+#
+# Structures are fetched from RCSB at run time; they are not vendored here.
+
+structures:
+  - pdb_id: 5Y2F
+    description: Human SIRT6 in complex with allosteric activator MDL-801
+    role: positive_control
+    reference_ligand: MDL-801
+  - pdb_id: 5MF6
+    description: Human Sirt6 in complex with activator UBCS039
+    role: positive_control
+    reference_ligand: UBCS039
+  - pdb_id: 3K35
+    description: Crystal structure of human SIRT6
+    role: reference
+    reference_ligand: null
+  - pdb_id: 5X16
+    description: SIRT6 apo structure
+    role: reference
+    reference_ligand: null
+
+# Acceptance threshold for re-docking a known activator into its own structure.
+# If the harness cannot recover the crystallographic pose within this RMSD,
+# the configuration is wrong and downstream scores are not interpretable.
+redock_rmsd_threshold_angstrom: 2.0
+
+docking:
+  # External binary, invoked as a subprocess. Not bundled, not linked.
+  engine: vina
+  exhaustiveness: 16
+  num_modes: 9
+  seed: 20261019
+  # Box is defined per structure during pocket detection (D1.2) and written
+  # back into results/, rather than hard-coded here from memory.
+  box_padding_angstrom: 4.0
+
+normal_modes:
+  # Exploratory (D1.3). See README: no established link between these modes
+  # and catalytic activation.
+  enabled: true
+  n_modes: 20
+  cutoff_angstrom: 15.0
+
+output_dir: results/sirt6_resonance

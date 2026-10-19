@@ -20,7 +20,6 @@ jobs:
         run: pip install pytest scipy numpy pandas
       - name: Run Bounty 1 tests
         run: pytest tests/test_bounty1_pace.py -v --tb=short
-        continue-on-error: true
 
   test-bounty-2:
     name: "Bounty #2 — FCQC Simulator"
@@ -34,7 +33,6 @@ jobs:
         run: pip install pytest numpy
       - name: Run Bounty 2 tests
         run: pytest tests/test_bounty2_physics.py -v --tb=short
-        continue-on-error: true
 
   test-bounty-3:
     name: "Bounty #3 — SiLA 2 Bridge"
@@ -48,7 +46,6 @@ jobs:
         run: pip install pytest grpcio
       - name: Run Bounty 3 unit tests (no Docker)
         run: pytest tests/test_bounty3_sila2.py -v --tb=short -m "not integration"
-        continue-on-error: true
 
   test-scaffolding:
     name: "Roadmap 2026-2027 — module scaffolding"

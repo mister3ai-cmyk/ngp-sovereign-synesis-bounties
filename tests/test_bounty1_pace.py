@@ -18,6 +18,16 @@ MIN_PEARSON_R = 0.92
 # ---------------------------------------------------------------------------
 MANIFEST = pathlib.Path("results/manifest.json")
 
+# Every test in this module validates a submission described by MANIFEST.
+# Without it there is nothing to validate, so the whole module skips rather
+# than reporting a false pass. This is declared at module level so that a
+# test added later cannot run by accident just because it forgot to request
+# the `manifest` fixture.
+pytestmark = pytest.mark.skipif(
+    not MANIFEST.exists(),
+    reason=f"{MANIFEST} not found — no Bounty #1 submission to validate; run the ChIP-seq / DunedinPACE pipeline first",
+)
+
 
 @pytest.fixture(scope="module")
 def manifest():

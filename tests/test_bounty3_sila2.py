@@ -10,6 +10,16 @@ import pytest
 
 MANIFEST = pathlib.Path("results/sila2_manifest.json")
 
+# Every test in this module validates a submission described by MANIFEST.
+# Without it there is nothing to validate, so the whole module skips rather
+# than reporting a false pass. This is declared at module level so that a
+# test added later cannot run by accident just because it forgot to request
+# the `manifest` fixture.
+pytestmark = pytest.mark.skipif(
+    not MANIFEST.exists(),
+    reason=f"{MANIFEST} not found — no Bounty #3 submission to validate; run the SiLA 2 stack first",
+)
+
 GRPC_LATENCY_P99_MS_MAX = 50.0
 PTP_UTC_OFFSET_MAX_MS = 1.0  # IEEE 1588 PTP vs GPS-disciplined UTC reference
 CLOCK_JITTER_MAX_MS = 1.0

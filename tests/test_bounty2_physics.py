@@ -25,6 +25,16 @@ MAX_RUNTIME_CPU_HOURS = 4.0
 
 MANIFEST = pathlib.Path("results/physics_manifest.json")
 
+# Every test in this module validates a submission described by MANIFEST.
+# Without it there is nothing to validate, so the whole module skips rather
+# than reporting a false pass. This is declared at module level so that a
+# test added later cannot run by accident just because it forgot to request
+# the `manifest` fixture.
+pytestmark = pytest.mark.skipif(
+    not MANIFEST.exists(),
+    reason=f"{MANIFEST} not found — no Bounty #2 submission to validate; run the FCQC simulation first",
+)
+
 
 @pytest.fixture(scope="module")
 def manifest():

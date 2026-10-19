@@ -48,6 +48,13 @@ Negative and null results are recorded here alongside positive ones.
   (7/9/7 skipped, 9 and 9 passed). This clears the `Code Quality` CI job, which had been
   failing.
 
+- `continue-on-error: true` removed from the three bounty CI jobs. They had reported success
+  regardless of the result, so a green badge carried no information. Each bounty test module
+  now declares a module-level `pytest.mark.skipif` on the presence of its manifest, so a run
+  without a submission skips with a stated reason instead of masking an error, and a run with
+  a submission fails for real. Verified both ways: no manifest gives 8/9/7 skipped and
+  exit 0; a deliberately malformed manifest gives failures and exit 1.
+
 ### Notes
 
 - No scientific results are included in this change. Every module ships as scaffolding with

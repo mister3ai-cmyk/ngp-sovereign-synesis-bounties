@@ -55,6 +55,11 @@ Negative and null results are recorded here alongside positive ones.
   a submission fails for real. Verified both ways: no manifest gives 8/9/7 skipped and
   exit 0; a deliberately malformed manifest gives failures and exit 1.
 
+- `pytest.ini` registers the `integration` and `slow` markers that `tests/conftest.py`
+  applies, clearing `PytestUnknownMarkWarning` and making `pytest --markers` list them.
+  Kept in `pytest.ini` rather than `pyproject.toml` so that adding pytest configuration
+  does not change how ruff discovers its own settings.
+
 ### Notes
 
 - No scientific results are included in this change. Every module ships as scaffolding with

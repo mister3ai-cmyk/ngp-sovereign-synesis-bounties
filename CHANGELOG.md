@@ -38,11 +38,19 @@ Negative and null results are recorded here alongside positive ones.
 - `README.md` — pull requests are accepted again for the roadmap modules; the licensing split
   between BSL 1.1 and Apache-2.0 is documented.
 
+### Fixed
+
+- 14 pre-existing lint errors in `tests/` reported by ruff: unsorted imports (6), unused
+  imports (4), and `subprocess.run` without an explicit `check` argument (4). The four
+  call sites use `check=False`, which preserves the existing behaviour: each one already
+  inspects `returncode` itself and raises an assertion carrying the subprocess stderr,
+  which `check=True` would pre-empt. Test outcomes are unchanged before and after
+  (7/9/7 skipped, 9 and 9 passed). This clears the `Code Quality` CI job, which had been
+  failing.
+
 ### Notes
 
 - No scientific results are included in this change. Every module ships as scaffolding with
   its computation unimplemented (`TODO` markers in source).
 - Thresholds in `safety/paleo_shield/criteria.py` are deliberately unset. The module refuses
   to evaluate a profile against an unsourced threshold.
-- Pre-existing lint errors in `tests/` (14, reported by ruff 0.17) were left untouched; they
-  predate this change and are tracked separately.

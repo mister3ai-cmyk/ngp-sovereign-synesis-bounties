@@ -5,7 +5,6 @@ docs/LNOI_WDM_Dispatcher_Core_Spec_v1.md
 """
 import unittest
 
-
 SWITCHING_LATENCY_PS = 38.0
 TRANSIT_LATENCY_NS = 350.0
 VAN_HEERDEN_LIMIT_TBIT = 70.7

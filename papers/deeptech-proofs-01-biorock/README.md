@@ -1,5 +1,8 @@
 # Electrochemical Seawater Mineral Accretion Dynamics
 
+> **CORRECTION (2026-11-08, by the author).** Model study; no experiments were performed by the author. Strength and crack-closure figures are model estimates or literature-based assumptions. See the notice on 10.5281/zenodo.22798026.
+
+
 **Potentiostatic Control, Phase Thermodynamics, and Self-Healing Kinetics of Biorock Substructures**
 
 *Hyperion DeepTech Research Group / Synapse Core Infrastructure Initiative*  

@@ -1,5 +1,8 @@
 # DeepTech Proofs #07: Post-Quantum Swarm Intelligence & CRDT-HLC State Consensus
 
+> **CORRECTION (2026-11-08, by the author).** The implementation is a POSIX shared-memory mailbox, not a ring buffer; there are no AVX-512 or CUDA paths; "sub-microsecond" is incorrect (p50 = 26.7 µs); Dilithium-5/Kyber-1024 and the 64-node convergence are design statements, not implemented or measured. See the notice on 10.5281/zenodo.22819532.
+
+
 **Post-Quantum Swarm Intelligence & CRDT-HLC State Consensus: Zero-Knowledge Proof-of-Knowledge (ZK-PoK) Ledger over High-Throughput Shared Tensor Rings**
 
 *Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  

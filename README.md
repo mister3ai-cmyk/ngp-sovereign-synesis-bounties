@@ -14,6 +14,8 @@
 
 ---
 
+> **STATUS OF THE HISTORICAL TRACKS (2026-11-08, by the author).** The figures in the historical bounty tracks and in `papers/` are model outputs, not measurements. DeepTech Proofs #04 (THz/SIRT6) and #06 (D(0)/LENR) are retracted; #01, #02, #03, #05 and #07 carry correction notices (see each paper's README and its Zenodo record).
+
 ## Research Roadmap 2026-2027
 
 Active computational milestones, with acceptance criteria and stated limitations in

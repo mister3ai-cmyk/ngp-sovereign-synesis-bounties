@@ -1,5 +1,8 @@
 # DeepTech Proofs #05: Closed-Loop Autonomous Laboratories
 
+> **CORRECTION (2026-11-08, by the author).** No physical laboratory instruments were connected; latencies, throughput and convergence figures come from a simulated device bus. See the notice on 10.5281/zenodo.22818737.
+
+
 **Closed-Loop Autonomous Laboratories: SiLA 2 gRPC Orchestration, Self-Optimizing Bayesian DoE, and Zero-Human-in-the-Loop Synthesis Pipelines**
 
 *Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  

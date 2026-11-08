@@ -1,5 +1,8 @@
 # DeepTech Proofs #06: Non-Hermitian Phonon-Nuclear Coupling & D(0) Dynamics
 
+> **RETRACTED (2026-11-08, by the author).** "Prove"/"demonstrate" refer to a theoretical model; no experiment was performed. The COP, neutron, 511 keV and efficiency figures are model outputs, and the model does not provide a mechanism that overcomes the Coulomb barrier. Zenodo record 10.5281/zenodo.22819187 is retracted.
+
+
 **Non-Hermitian Phonon-Nuclear Coupling and Ultradense Deuterium D(0) Dynamics: Anomaly-Free Energy Catalysis, ²⁰¹Hg Resonant Up-Conversion, and 511 keV Collapse Signatures**
 
 *Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  

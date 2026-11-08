@@ -1,5 +1,8 @@
 # DeepTech Proofs #04: Project ANCHOR — Quantum-Optical Epigenetic Reprogramming
 
+> **RETRACTED (2026-11-08, by the author).** The figures below (4.2× SIRT6, > 85 % LINE-1 suppression, 25–30 years of age reversal, r = 0.942) are outputs of a conceptual model; no experiment was performed. THz-driven SIRT6 activation has no support in the literature, and a nitrogen laser (337 nm) does not emit at 8–15 THz. Zenodo record 10.5281/zenodo.22816994 is retracted.
+
+
 **Quantum-Optical Decoupling of Epigenetic Aging Landscapes: THz-Driven SIRT6 Activation, Fröhlich Condensates, and Waddington Attractor Reprogramming**
 
 *Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  

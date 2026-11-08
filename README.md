@@ -1,7 +1,7 @@
 # NGP 3.0 Sovereign Synesis — Open DeSci Bounty Program
 
 [![License: BSL 1.1](https://img.shields.io/badge/License-BSL%201.1-yellow.svg)](LICENSE)
-> 💼 **Commercial use requires a license** — contact [research@syn.ai](mailto:research@syn.ai)
+> 💼 **Commercial use requires a license** — contact [contact@synapse-core.pp.ua](mailto:contact@synapse-core.pp.ua)
 
 ---
 
@@ -10,9 +10,11 @@
 >
 > **Contributions are open for the 2026-2027 roadmap modules** (`core/`, `models/`, `safety/`) under Apache-2.0. See [`docs/ROADMAP_2026_2027.md`](docs/ROADMAP_2026_2027.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 >
-> For collaboration inquiries, contact: research@syn.ai
+> For collaboration inquiries, contact: contact@synapse-core.pp.ua
 
 ---
+
+> **STATUS OF THE HISTORICAL TRACKS (2026-11-08, by the author).** The figures in the historical bounty tracks and in `papers/` are model outputs, not measurements. DeepTech Proofs #04 (THz/SIRT6) and #06 (D(0)/LENR) are retracted; #01, #02, #03, #05 and #07 carry correction notices (see each paper's README and its Zenodo record). The affiliation "Hyperion DeepTech Research Group" printed in the PDFs is not an existing organisation; the author's affiliation is Synapse Core Infrastructure, contact: contact@synapse-core.pp.ua.
 
 ## Research Roadmap 2026-2027
 
@@ -196,7 +198,7 @@ The terms below apply to the BSL 1.1 portion.
 |-------|-------|
 | Licensor | Maksym Babych / Synapse Core Infrastructure |
 | Additional Use Grant | Free for non-commercial, research, educational, and personal use |
-| Commercial Use | Requires a separate written license — contact **research@syn.ai** |
+| Commercial Use | Requires a separate written license — contact **contact@synapse-core.pp.ua** |
 | Change Date | **2029-09-19** |
 | Change License | Apache License 2.0 (code becomes fully open-source on Change Date) |
 

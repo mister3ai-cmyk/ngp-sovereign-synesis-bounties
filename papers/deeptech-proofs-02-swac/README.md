@@ -1,9 +1,12 @@
 # DeepTech Proofs #02: SWAC & Venturi Microclimate Cooling
 
+> **CORRECTION (2026-11-08, by the author).** Design study: COP = 19.8 is calculated, not measured; the Venturi drop of −11.2 °C is not supported (flow acceleration alone gives ≈ 0.1 K); cost figures are scenario estimates. See the notice on 10.5281/zenodo.22800377.
+
+
 **Deep Sea Water Air Conditioning (SWAC) & Venturi Microclimate Cooling: Closed-Loop Thermodynamic Architecture and Hydrological Arbitrage in Hyperion White Lotus**
 
-*Maksym Babych — Hyperion DeepTech Research Group, Synapse Core Infrastructure*  
-*DIFC, Dubai, UAE — research@hyperion-whitelotus.io*  
+*Maksym Babych — Synapse Core Infrastructure*  
+*contact@synapse-core.pp.ua*  
 *September 2026*
 
 > [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22800377.svg)](https://doi.org/10.5281/zenodo.22800377)

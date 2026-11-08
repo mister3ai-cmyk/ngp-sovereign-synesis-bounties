@@ -1,6 +1,6 @@
 """
 Biorock Electrochemical Mineral Accretion Kinetics Simulator
-Hyperion DeepTech Research Group / Synapse Core Infrastructure Initiative
+Synapse Core Infrastructure
 
 Models:
   1. Nernst diffusion layer pH as a function of cathodic current density j

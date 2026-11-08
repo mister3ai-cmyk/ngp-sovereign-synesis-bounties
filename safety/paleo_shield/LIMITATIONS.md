@@ -49,4 +49,4 @@ that something is safe.
 
 Treat any number produced here as a computational observation with the above caveats
 attached. If you find this module cited anywhere as evidence of safety, that citation is
-wrong, and we would like to know about it: research@syn.ai
+wrong, and we would like to know about it: contact@synapse-core.pp.ua

@@ -5,7 +5,7 @@
 
 **Reversible Photonic-Spin Computing: LiNbO₃ Spin-Photon Memory, Grassmannian Geodesic Coherence, and Zero-Entropy Logic Gates**
 
-*Maksym Babych — Hyperion DeepTech Research Group, Synapse Core Infrastructure*  
+*Maksym Babych — Synapse Core Infrastructure*  
 *September 2026*
 
 > [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22816555.svg)](https://doi.org/10.5281/zenodo.22816555)

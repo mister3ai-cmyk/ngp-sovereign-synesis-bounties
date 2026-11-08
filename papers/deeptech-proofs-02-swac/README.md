@@ -5,8 +5,8 @@
 
 **Deep Sea Water Air Conditioning (SWAC) & Venturi Microclimate Cooling: Closed-Loop Thermodynamic Architecture and Hydrological Arbitrage in Hyperion White Lotus**
 
-*Maksym Babych — Hyperion DeepTech Research Group, Synapse Core Infrastructure*  
-*DIFC, Dubai, UAE — research@hyperion-whitelotus.io*  
+*Maksym Babych — Synapse Core Infrastructure*  
+*contact@synapse-core.pp.ua*  
 *September 2026*
 
 > [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22800377.svg)](https://doi.org/10.5281/zenodo.22800377)

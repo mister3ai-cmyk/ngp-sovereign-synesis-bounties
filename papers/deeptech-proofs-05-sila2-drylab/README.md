@@ -5,7 +5,7 @@
 
 **Closed-Loop Autonomous Laboratories: SiLA 2 gRPC Orchestration, Self-Optimizing Bayesian DoE, and Zero-Human-in-the-Loop Synthesis Pipelines**
 
-*Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  
+*Maksym Babych — Synapse Core Infrastructure*  
 *September 2026*
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22818737.svg)](https://doi.org/10.5281/zenodo.22818737)

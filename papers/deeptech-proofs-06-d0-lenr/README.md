@@ -5,7 +5,7 @@
 
 **Non-Hermitian Phonon-Nuclear Coupling and Ultradense Deuterium D(0) Dynamics: Anomaly-Free Energy Catalysis, ²⁰¹Hg Resonant Up-Conversion, and 511 keV Collapse Signatures**
 
-*Maksym Babych — Hyperion DeepTech Research Group / Synapse Core Infrastructure*  
+*Maksym Babych — Synapse Core Infrastructure*  
 *September 2026*
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22819187.svg)](https://doi.org/10.5281/zenodo.22819187)

@@ -1,6 +1,6 @@
 """
 Zenodo Auto-Deploy Script
-Hyperion DeepTech Research Group
+Synapse Core Infrastructure
 
 Usage:
   set ZENODO_TOKEN=your_token_here

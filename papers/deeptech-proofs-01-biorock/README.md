@@ -5,7 +5,7 @@
 
 **Potentiostatic Control, Phase Thermodynamics, and Self-Healing Kinetics of Biorock Substructures**
 
-*Hyperion DeepTech Research Group / Synapse Core Infrastructure Initiative*  
+*Maksym Babych — Synapse Core Infrastructure*  
 *Published: September 2026*
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22798026.svg)](https://doi.org/10.5281/zenodo.22798026)
@@ -69,7 +69,7 @@ Requires: `IEEEtran`, `amsmath`, `graphicx`, `booktabs`, `hyperref`, `microtype`
 @article{hyperion2026biorock,
   title   = {Electrochemical Seawater Mineral Accretion Dynamics: Potentiostatic Control,
              Phase Thermodynamics, and Self-Healing Kinetics of Biorock Substructures},
-  author  = {{Hyperion DeepTech Research Group} and {Synapse Core Infrastructure Initiative}},
+  author  = {Babych, Maksym},
   year    = {2026},
   month   = {September},
   url     = {https://github.com/mister3ai-cmyk/ngp-sovereign-synesis-bounties}

@@ -80,4 +80,4 @@ the parts that did not work.
 
 ## Contact
 
-research@syn.ai
+contact@synapse-core.pp.ua
